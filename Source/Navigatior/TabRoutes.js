@@ -23,11 +23,7 @@ function TabRoutes() {
         tabBarStyle: {
           //   position: 'absolute',
           backgroundColor: '#272727',
-          //   borderRadius: 50,
-          //   marginHorizontal:5,
-          //   bottom: 10,
-          //   paddingBottom: 6,
-          //   height: 60
+          /
         },
       }}>
       <Tab.Screen
