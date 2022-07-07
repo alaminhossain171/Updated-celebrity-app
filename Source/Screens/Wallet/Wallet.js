@@ -21,7 +21,7 @@ const Wallet = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <View>
+      <View style={{margin: 10}}>
         <View style={{backgroundColor: '#343434'}}>
           <Text style={{color: '#fff', fontSize: 18, margin: 8}}>Balance</Text>
           <View style={styles.underLineBlack} />
