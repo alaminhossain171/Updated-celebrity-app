@@ -67,7 +67,7 @@ function CustomDrawer(props) {
           <Ionicons name="ios-settings-sharp" size={20} color="gold" />
         )}
         labelStyle={{color: '#f2f2f2'}}
-        onPress={() => alert('hello2')}
+        onPress={() => Navigation.navigate(MainNavigationString.SETTING)}
         style={{borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10}}
       />
       <DrawerItem

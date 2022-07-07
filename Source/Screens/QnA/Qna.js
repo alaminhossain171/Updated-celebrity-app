@@ -1,14 +1,168 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+/* eslint-disable prettier/prettier */
+import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import styles from '../Dashboard/StylesHome'
+import LinearGradient from 'react-native-linear-gradient';
+import imagePath from '../../Constants/imagePath';
+import MainNavigationString from '../../Constants/MainNavigationString';
 
 const Qna = () => {
+  const Navigation = useNavigation();
+
   return (
-    <View>
-      <Text>Qna</Text>
-    </View>
-  )
-}
+   <>
+    <ScrollView style={{backgroundColor: '#000', padding: 8}}>
+        <View style={styles.container}>
+          <View style={styles.superStarHome}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.QNAALL)}>
+              <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}}
+                colors={[
+                  '#FFAD00',
+                  '#FFD273',
+                  '#E19A04',
+                  '#FACF75',
+                  '#E7A725',
+                  '#FFAD00',
+                ]}
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>All</Text>
+              </LinearGradient>
+              <Image source={imagePath.All} style={styles.postImage} />
+             <Text style={styles.badge}>
+                <Text style={styles.badgeT}>20</Text>
+              </Text>
+            </TouchableOpacity>
 
-export default Qna
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.QNAAPPROVED)}>
+              <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}} 
+                colors={[
+                  '#FFAD00',
+                  '#FFD273',
+                  '#E19A04',
+                  '#FACF75',
+                  '#E7A725',
+                  '#FFAD00',
+                ]}
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>Approved</Text>
+              </LinearGradient>
+              <Image
+                source={imagePath.Approved}
+                style={styles.postImage}
+              />
+             <Text style={styles.badge}>
+                <Text style={styles.badgeT}>20</Text>
+              </Text>
+            </TouchableOpacity>
+          </View>
 
-const styles = StyleSheet.create({})
+          <View style={styles.superStarHome}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.QNAPENDING)}>
+              <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}}
+                colors={[
+                  '#FFAD00',
+                  '#FFD273',
+                  '#E19A04',
+                  '#FACF75',
+                  '#E7A725',
+                  '#FFAD00',
+                ]}
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>Pending</Text>
+              </LinearGradient>
+              <Image source={imagePath.Pending} style={styles.postImage} />
+             <Text style={styles.badge}>
+                <Text style={styles.badgeT}>20</Text>
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.singleContent}onPress={() => Navigation.navigate(MainNavigationString.QNACOMPLETED)}>
+              <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}} 
+                colors={[
+                  '#FFAD00',
+                  '#FFD273',
+                  '#E19A04',
+                  '#FACF75',
+                  '#E7A725',
+                  '#FFAD00',
+                ]}
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>Completed</Text>
+              </LinearGradient>
+              <Image
+                source={imagePath.Completed}
+                style={styles.postImage}
+              />
+             <Text style={styles.badge}>
+                <Text style={styles.badgeT}>20</Text>
+              </Text>
+            </TouchableOpacity>
+          </View> 
+
+          <View style={styles.superStarHome}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.QNAREJECTED)}>
+              <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}}
+                colors={[
+                  '#FFAD00',
+                  '#FFD273',
+                  '#E19A04',
+                  '#FACF75',
+                  '#E7A725',
+                  '#FFAD00',
+                ]}
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>Rejected</Text>
+              </LinearGradient>
+              <Image source={imagePath.Rejected} style={styles.postImage} />
+             <Text style={styles.badge}>
+                <Text style={styles.badgeT}>20</Text>
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.QNACREATE)}>
+              <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}}
+                colors={[
+                  '#FFAD00',
+                  '#FFD273',
+                  '#E19A04',
+                  '#FACF75',
+                  '#E7A725',
+                  '#FFAD00',
+                ]}
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>Create</Text>
+              </LinearGradient>
+              <Image source={imagePath.Post} style={styles.postImage} />
+             {/* <Text style={styles.badge}>
+                <Text style={styles.badgeT}>20</Text>
+              </Text> */}
+            </TouchableOpacity>
+          </View> 
+
+        </View>
+    </ScrollView>
+   </>
+  );
+};
+
+
+export default Qna;
