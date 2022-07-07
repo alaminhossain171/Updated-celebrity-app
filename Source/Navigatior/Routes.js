@@ -31,6 +31,9 @@ function Routes() {
 
                   
                 },
+               
+                headerTintColor: 'white',
+              
             }}
                 drawerContent={(props) => <CustomDrawer {...props} />}
             >

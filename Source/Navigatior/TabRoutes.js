@@ -23,15 +23,20 @@ function TabRoutes() {
         tabBarStyle: {
           //   position: 'absolute',
           backgroundColor: '#272727',
-         
+ 
         },
-      }}>
+        
+               
+      }}
+      
+      
+      >
       <Tab.Screen
-        name={MainNavigationString.DASHBORD}
+        name={'DASHBORD'}
         component={DashboardStack}
         options={{
           tabBarIcon: ({focused}) => {
-            return <Icon name="home" size={20} color="red" />;
+            return <Icon name="home" size={25} color="white" />;
           },
         }}
       />
