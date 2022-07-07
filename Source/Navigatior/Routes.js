@@ -20,22 +20,24 @@ const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
 function Routes() {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        drawerContent={props => <CustomDrawer {...props} />}
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#161616',
-          },
-          headerTintColor: 'white',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}>
-        <Drawer.Screen name={MainNavigationString.TAB} component={TabRoutes} />
-      </Drawer.Navigator>
-      {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
+
+    return (
+        <NavigationContainer >
+            <Drawer.Navigator
+            
+            screenOptions={{
+                headerStyle: {
+                  backgroundColor: '#272727',
+
+                  
+                },
+            }}
+                drawerContent={(props) => <CustomDrawer {...props} />}
+            >
+                <Drawer.Screen name={MainNavigationString.TAB} component={TabRoutes} />
+            </Drawer.Navigator>
+            {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
+
                 {AuthStack(Stack)}
             </Stack.Navigator> */}
     </NavigationContainer>
