@@ -26,6 +26,13 @@ function Routes() {
         <NavigationContainer >
             <Drawer.Navigator
             
+            screenOptions={{
+                headerStyle: {
+                  backgroundColor: '#272727',
+
+                  
+                },
+            }}
                 drawerContent={(props) => <CustomDrawer {...props} />}
             >
                 <Drawer.Screen name={MainNavigationString.TAB} component={TabRoutes} />
