@@ -21,6 +21,7 @@ export default {
   cardCover2: require('../Assets/Icons/Home/Card/ayman.png'),
   meetUpBanner: require('../Assets/Icons/Home/Card/Meetup.png'),
   meetUpBanner2: require('../Assets/Icons/Home/offline.png'),
+  Schedule: require('../Assets/Icon/Schedule.png'),
 
   //Home Online Stars
   star1: require('../Assets/Icons/Home/HomeStarsOnline/1.png'),
