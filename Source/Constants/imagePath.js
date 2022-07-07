@@ -179,20 +179,17 @@ export default {
   Join: require('../Assets/UpcomingAuditions/Join.png'),
   JoinCon: require('../Assets/UpcomingAuditions/GroupC.png'),
 
-
-
   // Menu and Post
 
   All: require('../Assets/Icon/All.png'),
-  Approved:require('../Assets/Icon/Approved.png'),
-  Rejected:require('../Assets/Icon/Rejected.png'),
+  Approved: require('../Assets/Icon/Approved.png'),
+  Rejected: require('../Assets/Icon/Rejected.png'),
   Pending: require('../Assets/Icon/Pending.png'),
   Completed: require('../Assets/Icon/Completed.png'),
-  StarShowcase:require('../Assets/Icon/StarShowcase.png'),
-  QnA:require('../Assets/Icon/QnA.png'),
-  FanGroup:require('../Assets/Icon/FanGroup.png'),
-  LiveC:require('../Assets/Icon/Live_C.png'),
-
+  StarShowcase: require('../Assets/Icon/StarShowcase.png'),
+  QnA: require('../Assets/Icon/QnA.png'),
+  FanGroup: require('../Assets/Icon/FanGroup.png'),
+  LiveC: require('../Assets/Icon/Live_C.png'),
 
   Auditions: require('../Assets/menu&post/auditions.png'),
   Create: require('../Assets/menu&post/create.png'),
@@ -271,20 +268,23 @@ export default {
   seven: require('../Assets/QA/seven.png'),
   eight: require('../Assets/QA/eight.png'),
   nine: require('../Assets/QA/nine.png'),
-  FatemaProfile:require('../Assets/QA/fatema.png'),
+  FatemaProfile: require('../Assets/QA/fatema.png'),
   VoiceChatBg: require('../Assets/Telegram_background.jpg'),
-  wave:require('../Assets/wave.gif'),
+  wave: require('../Assets/wave.gif'),
   clock: require('../Assets/clock.png'),
   view: require('../Assets/view.json'),
 
   //fangroup
-  vsBanner:require('../Assets/Fangroup/deepeka&katrina.jpg'),
-  BlurInvite:require('../Assets/Fangroup/BlurInvite.jpg'),
-  Kat:require('../Assets/Fangroup/ProfileImageKatrina.jpg'),
-  pooja:require('../Assets/Fangroup/Pooja_Hegde.jpg'),
+  vsBanner: require('../Assets/Fangroup/deepeka&katrina.jpg'),
+  BlurInvite: require('../Assets/Fangroup/BlurInvite.jpg'),
+  Kat: require('../Assets/Fangroup/ProfileImageKatrina.jpg'),
+  pooja: require('../Assets/Fangroup/Pooja_Hegde.jpg'),
 
-  Accepted:require('../Assets/Fangroup/icons/Accepted.png'),
-  Rejected:require('../Assets/Fangroup/icons/Rejected.png'),
-  Invitaiton:require('../Assets/Fangroup/icons/Invitation.png'),
-  Fangroup:require('../Assets/Fangroup/icons/FanGroup.png'),
+  Accepted: require('../Assets/Fangroup/icons/Accepted.png'),
+  Rejected: require('../Assets/Fangroup/icons/Rejected.png'),
+  Invitaiton: require('../Assets/Fangroup/icons/Invitation.png'),
+  Fangroup: require('../Assets/Fangroup/icons/FanGroup.png'),
+
+  // Others
+  graph: require('../Assets/graph.png'),
 };
