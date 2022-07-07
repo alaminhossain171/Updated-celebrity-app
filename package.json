@@ -20,6 +20,7 @@
     "react-native-camera": "^4.2.1",
     "react-native-date-picker": "^4.2.2",
     "react-native-gesture-handler": "^2.5.0",
+    "react-native-image-picker": "^2.3.4",
     "react-native-linear-gradient": "^2.6.2",
     "react-native-permissions": "^3.4.0",
     "react-native-qrcode-scanner": "^1.5.5",
