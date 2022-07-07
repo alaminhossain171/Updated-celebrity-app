@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {View, Text} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -15,6 +16,7 @@ import Qna from './../../Screens/QnA/Qna';
 import Fangroup from './../../Screens/Fangroup/Fangroup';
 import Greetings from './../../Screens/Greetings/Greetings';
 import LearningAll from '../../Screens/Learning/LearningAll';
+import Wallet from '../../Screens/Wallet/Wallet';
 const StackDashbord = createNativeStackNavigator();
 
 const DashboardStack = () => {
@@ -71,15 +73,26 @@ const DashboardStack = () => {
         component={Meetup}
       />
 
-        {/* =======================QnA=============================== */}
-        <StackDashbord.Screen name={MainNavigationString.GREETINGS} component={Greetings} />
+      {/* =======================Greetings=============================== */}
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGS}
+        component={Greetings}
+      />
 
       {/* =======================QnA=============================== */}
       <StackDashbord.Screen name={MainNavigationString.QNA} component={Qna} />
 
-
       {/*============== Fangroup==============  */}
-      <StackDashbord.Screen name={MainNavigationString.FANGROUP} component={Fangroup} />
+      <StackDashbord.Screen
+        name={MainNavigationString.FANGROUP}
+        component={Fangroup}
+      />
+
+      {/*============== Wallet==============  */}
+      <StackDashbord.Screen
+        name={MainNavigationString.WALLET}
+        component={Wallet}
+      />
     </StackDashbord.Navigator>
   );
 };

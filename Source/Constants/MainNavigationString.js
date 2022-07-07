@@ -40,5 +40,8 @@ export default {
     QNA:'Qna',
 
     //FANGROUP
-    FANGROUP:'Fangroup'
+    FANGROUP:'Fangroup',
+
+    //Wallet
+    WALLET: 'Wallet',  
 }
