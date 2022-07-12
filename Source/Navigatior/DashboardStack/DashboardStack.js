@@ -17,7 +17,6 @@ import Fangroup from './../../Screens/Fangroup/Fangroup';
 import Greetings from './../../Screens/Greetings/Greetings';
 import LearningAll from '../../Screens/Learning/LearningAll';
 import Wallet from '../../Screens/Wallet/Wallet';
-import Setting from '../../Screens/Schedule/Setting/Setting';
 import PostAll from '../../Screens/Post/PostAll';
 import PostApproved from '../../Screens/Post/PostApproved';
 import PostPending from '../../Screens/Post/PostPending';
@@ -42,6 +41,8 @@ import QnaPending from '../../Screens/QnA/QnaPending';
 import QnaCompleted from '../../Screens/QnA/QnaCompleted';
 import QnaRejected from '../../Screens/QnA/QnaRejected';
 import QnaCreate from '../../Screens/QnA/QnaCreate';
+import Setting from '../../Screens/Setting/Setting';
+import MonthSchedule from '../../Screens/Schedule/MonthSchedule';
 const StackDashbord = createNativeStackNavigator();
 
 const DashboardStack = () => {
@@ -53,10 +54,7 @@ const DashboardStack = () => {
         name={MainNavigationString.DASHBORD}
         component={Dashboard}
       />
-      <StackDashbord.Screen
-        name={MainNavigationString.SCHEDULE}
-        component={Schedule}
-      />
+     
 
       {/*=========== //post route=============  */}
       <StackDashbord.Screen name={MainNavigationString.POST} component={Post} />
@@ -141,10 +139,10 @@ const DashboardStack = () => {
 
 
       {/*============== Setting==============  */}
-      <StackDashbord.Screen
-      name={MainNavigationString.SETTING}
-      component={Setting}
-      />
+      <StackDashbord.Screen  name={MainNavigationString.SETTING} component={Setting} />
+
+      {/*============== Setting==============  */}
+      <StackDashbord.Screen name={MainNavigationString.SCHEDULE}  component={MonthSchedule} />
 
     </StackDashbord.Navigator>
 

@@ -10,7 +10,6 @@ export default {
     LOGIN: "Login",
     TAB: 'Home',
     DASHBORD: 'Dashbord',
-    SCHEDULE: 'Schedule',
 
     // post 
     POST:'Post',
@@ -73,4 +72,8 @@ export default {
 
     //Setting
     SETTING:'Setting',
+
+    //Schedule
+    SCHEDULE: 'Schedule',
+    MONTHSCHEDULE: 'MonthSchedule',
 }
