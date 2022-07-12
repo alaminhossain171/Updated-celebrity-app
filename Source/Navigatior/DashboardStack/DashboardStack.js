@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {View, Text} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -46,10 +47,9 @@ const StackDashbord = createNativeStackNavigator();
 const DashboardStack = () => {
   return (
     <StackDashbord.Navigator
-      screenOptions={{headerShown: false,}}
+      screenOptions={{headerShown: false}}
       initialRouteName={MainNavigationString.DASHBORD}>
       <StackDashbord.Screen
-      
         name={MainNavigationString.DASHBORD}
         component={Dashboard}
       />
@@ -60,11 +60,26 @@ const DashboardStack = () => {
 
       {/*=========== //post route=============  */}
       <StackDashbord.Screen name={MainNavigationString.POST} component={Post} />
-      <StackDashbord.Screen name={MainNavigationString.POSTALL} component={PostAll} />
-      <StackDashbord.Screen name={MainNavigationString.POSTAPPROVED} component={PostApproved} />
-      <StackDashbord.Screen name={MainNavigationString.POSTPENDING} component={PostPending} />
-      <StackDashbord.Screen name={MainNavigationString.POSTREJECTED} component={PostRejected} />
-      <StackDashbord.Screen name={MainNavigationString.POSTCREATE} component={PostCreate} />
+      <StackDashbord.Screen
+        name={MainNavigationString.POSTALL}
+        component={PostAll}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.POSTAPPROVED}
+        component={PostApproved}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.POSTPENDING}
+        component={PostPending}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.POSTREJECTED}
+        component={PostRejected}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.POSTCREATE}
+        component={PostCreate}
+      />
 
       {/* ============Live chat route===========  */}
       <StackDashbord.Screen
@@ -73,12 +88,30 @@ const DashboardStack = () => {
       />
 
       {/*====================== Audition==================  */}
-      <StackDashbord.Screen name={MainNavigationString.AUDITION} component={Audition} />
-      <StackDashbord.Screen name={MainNavigationString.AUDITIONALL} component={AuditionAll} />
-      <StackDashbord.Screen name={MainNavigationString.AUDITIONLIVEEVENT} component={AuditionLiveEvents} />
-      <StackDashbord.Screen name={MainNavigationString.AUDITIONAPPROVED} component={AuditionApproved} />
-      <StackDashbord.Screen name={MainNavigationString.AUDITIONPENDING} component={AuditionPending} />
-      <StackDashbord.Screen name={MainNavigationString.AUDITIONCREATE} component={AuditionCreate} />
+      <StackDashbord.Screen
+        name={MainNavigationString.AUDITION}
+        component={Audition}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.AUDITIONALL}
+        component={AuditionAll}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.AUDITIONLIVEEVENT}
+        component={AuditionLiveEvents}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.AUDITIONAPPROVED}
+        component={AuditionApproved}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.AUDITIONPENDING}
+        component={AuditionPending}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.AUDITIONCREATE}
+        component={AuditionCreate}
+      />
 
       {/*====================== Star Showcase==================  */}
       <StackDashbord.Screen
@@ -106,27 +139,69 @@ const DashboardStack = () => {
       />
 
       {/* =======================Greetings=============================== */}
-      <StackDashbord.Screen name={MainNavigationString.GREETINGS} component={Greetings} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSALL} component={GreetingsAll} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSAPPROVED} component={GreetingsApproved} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSPENDING} component={GreetingsPending} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSCOMPLETED} component={GreetingsCompleted} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSREGISTERED} component={GreetingsRegistered} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSFORWARD} component={GreetingsForwardToUser} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSEVALUATION} component={GreetingsEvaluation} />
-      <StackDashbord.Screen name={MainNavigationString.GREETINGSCREATE} component={GreetingsCreate} />
-
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGS}
+        component={Greetings}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSALL}
+        component={GreetingsAll}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSAPPROVED}
+        component={GreetingsApproved}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSPENDING}
+        component={GreetingsPending}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSCOMPLETED}
+        component={GreetingsCompleted}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSREGISTERED}
+        component={GreetingsRegistered}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSFORWARD}
+        component={GreetingsForwardToUser}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSEVALUATION}
+        component={GreetingsEvaluation}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.GREETINGSCREATE}
+        component={GreetingsCreate}
+      />
 
       {/* =======================QnA=============================== */}
       <StackDashbord.Screen name={MainNavigationString.QNA} component={Qna} />
-      <StackDashbord.Screen name={MainNavigationString.QNAALL} component={QnaAll} />
-      <StackDashbord.Screen name={MainNavigationString.QNAAPPROVED} component={QnaApproved} />
-      <StackDashbord.Screen name={MainNavigationString.QNAPENDING} component={QnaPending} />
-      <StackDashbord.Screen name={MainNavigationString.QNACOMPLETED} component={QnaCompleted} />
-      <StackDashbord.Screen name={MainNavigationString.QNAREJECTED} component={QnaRejected} />
-      <StackDashbord.Screen name={MainNavigationString.QNACREATE} component={QnaCreate} />
-
-
+      <StackDashbord.Screen
+        name={MainNavigationString.QNAALL}
+        component={QnaAll}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.QNAAPPROVED}
+        component={QnaApproved}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.QNAPENDING}
+        component={QnaPending}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.QNACOMPLETED}
+        component={QnaCompleted}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.QNAREJECTED}
+        component={QnaRejected}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.QNACREATE}
+        component={QnaCreate}
+      />
 
       {/*============== Wallet==============  */}
       <StackDashbord.Screen
@@ -134,19 +209,12 @@ const DashboardStack = () => {
         component={Wallet}
       />
 
-
       {/*============== Setting==============  */}
       <StackDashbord.Screen
-      name={MainNavigationString.SETTING}
-      component={Setting}
+        name={MainNavigationString.SETTING}
+        component={Setting}
       />
-
     </StackDashbord.Navigator>
-
-    
-
-
-
   );
 };
 
