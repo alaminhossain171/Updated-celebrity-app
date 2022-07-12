@@ -75,4 +75,5 @@ export default {
   VIEWCARD: 'ViewCard',
   VOICECALLLIST: 'VoiceCallList',
   VOICEMSG: 'VoiceMsg',
+  CREATEFORM: 'CreateForm',
 };

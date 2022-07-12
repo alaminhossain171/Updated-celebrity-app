@@ -45,6 +45,8 @@ import QnaCreate from '../../Screens/QnA/QnaCreate';
 import ApprovedCard from '../../Components/Reusable/ReuseCard';
 import ReuseCard from '../../Components/Reusable/ReuseCard';
 import VoiceCallList from '../../Components/Reusable/VoiceCallList';
+import CreateReusableForm from '../../Components/Reusable/CreateReusableForm';
+import VoiceMsg from '../../Components/Reusable/VoiceMsg';
 const StackDashbord = createNativeStackNavigator();
 
 const DashboardStack = () => {
@@ -222,6 +224,14 @@ const DashboardStack = () => {
       <StackDashbord.Screen
         name={MainNavigationString.VOICECALLLIST}
         component={VoiceCallList}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.VOICEMSG}
+        component={VoiceMsg}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.CREATEFORM}
+        component={CreateReusableForm}
       />
     </StackDashbord.Navigator>
   );

@@ -12,6 +12,7 @@ import styles from '../Dashboard/StylesHome'
 import LinearGradient from 'react-native-linear-gradient';
 import imagePath from '../../Constants/imagePath';
 import React from 'react';
+import MainNavigationString from '../../Constants/MainNavigationString';
 
 const LiveChat = () => {
   const Navigation = useNavigation();
@@ -136,7 +137,9 @@ const LiveChat = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} >
+            <TouchableOpacity style={styles.singleContent}
+            onPress={() => Navigation.navigate(MainNavigationString.VOICECALLLIST, {typeName: 'LiveChatList'})}
+            >
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 

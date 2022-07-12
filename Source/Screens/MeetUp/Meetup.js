@@ -1,17 +1,18 @@
 /* eslint-disable prettier/prettier */
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   Image,
   ScrollView,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
 
-import styles from '../Dashboard/StylesHome'
 import LinearGradient from 'react-native-linear-gradient';
 import imagePath from '../../Constants/imagePath';
+import MainNavigationString from '../../Constants/MainNavigationString';
+import styles from '../Dashboard/StylesHome';
 
 const Meetup = () => {
   const navigation = useNavigation();
@@ -42,7 +43,9 @@ const Meetup = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent}>
+            <TouchableOpacity style={styles.singleContent}
+            onPress={() => navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'MeetupApproved'})}
+            >
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -68,7 +71,10 @@ const Meetup = () => {
           </View>
 
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent}>
+            <TouchableOpacity style={styles.singleContent}
+            onPress={() => navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'MeetupPending'})}
+            
+            >
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -89,7 +95,9 @@ const Meetup = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent}>
+            <TouchableOpacity style={styles.singleContent}
+            onPress = {() => navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'MeetupRejected'})}
+            >
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -115,7 +123,9 @@ const Meetup = () => {
           </View> 
 
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent}>
+            <TouchableOpacity style={styles.singleContent}
+            onPress={() => MainNavigationString.navigate(MainNavigationString.VIEWCARD, {typeName: 'MeetupCompletion'})}
+            >
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -136,7 +146,9 @@ const Meetup = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent}>
+            <TouchableOpacity style={styles.singleContent}
+            onPress={() => navigation.navigate(MainNavigationString.CREATEFORM, {typeName: 'CreateMeetup'})}
+            >
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
