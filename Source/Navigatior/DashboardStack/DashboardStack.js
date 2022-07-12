@@ -42,6 +42,9 @@ import QnaPending from '../../Screens/QnA/QnaPending';
 import QnaCompleted from '../../Screens/QnA/QnaCompleted';
 import QnaRejected from '../../Screens/QnA/QnaRejected';
 import QnaCreate from '../../Screens/QnA/QnaCreate';
+import ApprovedCard from '../../Components/Reusable/ReuseCard';
+import ReuseCard from '../../Components/Reusable/ReuseCard';
+import VoiceCallList from '../../Components/Reusable/VoiceCallList';
 const StackDashbord = createNativeStackNavigator();
 
 const DashboardStack = () => {
@@ -61,21 +64,21 @@ const DashboardStack = () => {
       {/*=========== //post route=============  */}
       <StackDashbord.Screen name={MainNavigationString.POST} component={Post} />
       <StackDashbord.Screen
-        name={MainNavigationString.POSTALL}
-        component={PostAll}
+        name={MainNavigationString.VIEWCARD}
+        component={ReuseCard}
       />
-      <StackDashbord.Screen
+      {/* <StackDashbord.Screen
         name={MainNavigationString.POSTAPPROVED}
-        component={PostApproved}
+        component={ReuseCard}
       />
       <StackDashbord.Screen
         name={MainNavigationString.POSTPENDING}
-        component={PostPending}
+        component={ReuseCard}
       />
       <StackDashbord.Screen
         name={MainNavigationString.POSTREJECTED}
-        component={PostRejected}
-      />
+        component={ReuseCard}
+      /> */}
       <StackDashbord.Screen
         name={MainNavigationString.POSTCREATE}
         component={PostCreate}
@@ -213,6 +216,12 @@ const DashboardStack = () => {
       <StackDashbord.Screen
         name={MainNavigationString.SETTING}
         component={Setting}
+      />
+
+
+      <StackDashbord.Screen
+        name={MainNavigationString.VOICECALLLIST}
+        component={VoiceCallList}
       />
     </StackDashbord.Navigator>
   );

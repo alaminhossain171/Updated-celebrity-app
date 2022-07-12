@@ -1,76 +1,78 @@
 /* eslint-disable quotes */
 /* eslint-disable no-dupe-keys */
-/* eslint-disable comma-dangle */
+
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable prettier/prettier */
 export default {
+  DASHBORD: 'Dashbord',
+  LOGIN: 'Login',
+  TAB: 'Home',
+  DASHBORD: 'Dashbord',
+  SCHEDULE: 'Schedule',
 
+  // post
+  POST: 'Post',
+  POSTALL: 'PostAll',
+  POSTAPPROVED: 'PostApproved',
+  POSTPENDING: 'PostPending',
+  POSTREJECTED: 'PostRejected',
+  POSTCREATE: 'PostCreate',
 
-    DASHBORD: "Dashbord",
-    LOGIN: "Login",
-    TAB: 'Home',
-    DASHBORD: 'Dashbord',
-    SCHEDULE: 'Schedule',
+  //Livechat
+  LIVECHAT: 'LiveChat',
 
-    // post 
-    POST:'Post',
-    POSTALL:'PostAll',
-    POSTAPPROVED:'PostApproved',
-    POSTPENDING:'PostPending',
-    POSTREJECTED:'PostRejected',
-    POSTCREATE:'PostCreate',
+  //Audition
+  AUDITION: 'Audition',
+  AUDITIONALL: 'AuditionAll',
+  AUDITIONLIVEEVENT: 'AuditionLiveEvents',
+  AUDITIONAPPROVED: 'AuditionApproved',
+  AUDITIONPENDING: 'AuditionPending',
+  AUDITIONCREATE: 'AuditionCreate',
 
-    //Livechat
-    LIVECHAT:'LiveChat',
+  //Star Showcase
+  STARSHOWCASE: 'StarShowcase',
 
-    //Audition
-    AUDITION:'Audition',
-    AUDITIONALL:'AuditionAll',
-    AUDITIONLIVEEVENT:'AuditionLiveEvents',
-    AUDITIONAPPROVED:'AuditionApproved',
-    AUDITIONPENDING:'AuditionPending',
-    AUDITIONCREATE:'AuditionCreate',
+  //Learning
+  LEARNING: 'Learning',
+  LEARNINGALL: 'LearningAll',
 
-    //Star Showcase
-    STARSHOWCASE:'StarShowcase',
+  //Live
+  LIVE: 'Live',
 
+  //Meetup
+  MEETUP: 'MeetUp',
 
-    //Learning
-    LEARNING:'Learning',
-    LEARNINGALL:'LearningAll',
+  //Greeting
+  GREETINGS: 'Greetings',
+  GREETINGSALL: 'GreetingsAll',
+  GREETINGSAPPROVED: 'GreetingsApproved',
+  GREETINGSPENDING: 'GreetingsPending',
+  GREETINGSCOMPLETED: 'GreetingsCompleted',
+  GREETINGSREGISTERED: 'GreetingsRegisteredToUser',
+  GREETINGSFORWARD: 'GreetingsForwardToUser',
+  GREETINGSEVALUATION: 'GreetingsEvaluation',
+  GREETINGSCREATE: 'GreetingsCreate',
 
-    //Live
-    LIVE:'Live',
+  // Qna
+  QNA: 'Qna',
+  QNAALL: 'QNAAll',
+  QNAAPPROVED: 'QNAApproved',
+  QNAPENDING: 'QNAPending',
+  QNACOMPLETED: 'QNACompleted',
+  QNAREJECTED: 'QNARejected',
+  QNACREATE: 'QNACreate',
 
-    //Meetup
-    MEETUP:'MeetUp',
+  //FANGROUP
+  FANGROUP: 'Fangroup',
 
-    //Greeting
-    GREETINGS:'Greetings',
-    GREETINGSALL:'GreetingsAll',
-    GREETINGSAPPROVED:'GreetingsApproved',
-    GREETINGSPENDING:'GreetingsPending',
-    GREETINGSCOMPLETED:'GreetingsCompleted',
-    GREETINGSREGISTERED:'GreetingsRegisteredToUser',
-    GREETINGSFORWARD:'GreetingsForwardToUser',
-    GREETINGSEVALUATION:'GreetingsEvaluation',
-    GREETINGSCREATE:'GreetingsCreate',
+  //Wallet
+  WALLET: 'Wallet',
 
-    // Qna 
-    QNA:'Qna',
-    QNAALL:'QNAAll',
-    QNAAPPROVED:'QNAApproved',
-    QNAPENDING:'QNAPending',
-    QNACOMPLETED:'QNACompleted',
-    QNAREJECTED:'QNARejected',
-    QNACREATE:'QNACreate',
+  //Setting
+  SETTING: 'Setting',
 
-    //FANGROUP
-    FANGROUP:'Fangroup',
-
-    //Wallet
-    WALLET: 'Wallet',  
-
-    //Setting
-    SETTING:'Setting',
-}
+  // ReuseCard
+  VIEWCARD: 'ViewCard',
+  VOICECALLLIST: 'VoiceCallList',
+  VOICEMSG: 'VoiceMsg',
+};

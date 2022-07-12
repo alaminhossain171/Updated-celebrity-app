@@ -2,9 +2,9 @@
 import React from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
+import ImagePicker from 'react-native-image-picker';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
-import ImagePicker from 'react-native-image-picker';
 import styles from './styles';
 
 const CreatePost = () => {
@@ -59,7 +59,7 @@ const CreatePost = () => {
     <View style={styles.container}>
       <View style={{padding: 12}}>
         <View style={styles.createPostRow}>
-          <View></View>
+          <View />
           <Text style={{color: '#fff'}}>Post Type</Text>
           <TouchableOpacity onPress={() => setFreeShow(!freeShow)}>
             <AntDesign
