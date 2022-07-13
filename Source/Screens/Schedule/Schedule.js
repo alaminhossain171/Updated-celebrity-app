@@ -1,8 +1,11 @@
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import imagePath from '../../Constants/imagePath';
+import MainNavigationString from '../../Constants/MainNavigationString';
+import {useNavigation} from '@react-navigation/native';
 
 const Schedule = () => {
+     const Navigation = useNavigation();
 return (
 <>
      <ScrollView style={styles.container}>
@@ -11,108 +14,108 @@ return (
           </View>
 
           <View style={styles.ContainerCard2}>
-               <View style={styles.Content}>
+               <TouchableOpacity style={styles.Content} onPress={() => Navigation.navigate(MainNavigationString.MONTHSCHEDULE)}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>January 2022</Text>
                     </View>
-               </View>
-               <View style={styles.Content}>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>January 2022</Text>
                     </View>
-               </View>
-               <View style={styles.Content}>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>February 2022</Text>
                     </View>
-               </View>
+               </TouchableOpacity>
                
-               <View style={styles.Content}>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>March 2022</Text>
                     </View>
-               </View>
+               </TouchableOpacity>
 
-               <View style={styles.Content}>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>April 2022</Text>
                     </View>
-               </View>
-               <View style={styles.Content}>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>May 2022</Text>
                     </View>
-               </View>
-               <View style={styles.Content}>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>June 2022</Text>
                     </View>
-               </View>
+               </TouchableOpacity>
 
-               <View style={styles.Content}>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>July 2022</Text>
                     </View>
-               </View>
-               <View style={styles.Content}>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>January 2022</Text>
                     </View>
-               </View>
-               <View style={styles.Content}>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>February 2022</Text>
                     </View>
-               </View>
+               </TouchableOpacity>
                
-               <View style={styles.Content}>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>March 2022</Text>
                     </View>
-               </View>
+               </TouchableOpacity>
 
                
-               <View style={styles.Content}>
+               <TouchableOpacity style={styles.Content}>
                     <View>
                          <Image source={imagePath.Schedule} style={styles.postImage} />
                     </View>
                     <View>
                          <Text style={styles.Text}>March 2022</Text>
                     </View>
-               </View>
+               </TouchableOpacity>
 
                
 

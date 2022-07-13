@@ -3,7 +3,6 @@ import {View, Text} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Dashboard from '../../Screens/Dashboard/Dashboard';
-import Schedule from '../../Screens/Schedule/Schedule';
 import MainNavigationString from '../../Constants/MainNavigationString';
 import Post from './../../Screens/Post/Post';
 import LiveChat from './../../Screens/Live-chat/LiveChat';
@@ -42,7 +41,9 @@ import QnaCompleted from '../../Screens/QnA/QnaCompleted';
 import QnaRejected from '../../Screens/QnA/QnaRejected';
 import QnaCreate from '../../Screens/QnA/QnaCreate';
 import Setting from '../../Screens/Setting/Setting';
+import Schedule from '../../Screens/Schedule/Schedule';
 import MonthSchedule from '../../Screens/Schedule/MonthSchedule';
+
 const StackDashbord = createNativeStackNavigator();
 
 const DashboardStack = () => {
@@ -142,7 +143,8 @@ const DashboardStack = () => {
       <StackDashbord.Screen  name={MainNavigationString.SETTING} component={Setting} />
 
       {/*============== Setting==============  */}
-      <StackDashbord.Screen name={MainNavigationString.SCHEDULE}  component={MonthSchedule} />
+      <StackDashbord.Screen name={MainNavigationString.SCHEDULE}  component={Schedule} />
+      <StackDashbord.Screen name={MainNavigationString.MONTHSCHEDULE}  component={MonthSchedule} />
 
     </StackDashbord.Navigator>
 

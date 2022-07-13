@@ -288,4 +288,5 @@ export default {
 
   // Others
   graph: require('../Assets/graph.png'),
+  ScheduleBanner: require('../Assets/MonthBa.png'),
 };
