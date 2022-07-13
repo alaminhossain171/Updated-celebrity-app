@@ -169,6 +169,117 @@ const ReuseCard = ({route}) => {
                                 typeName,
                               },
                             )
+                        : typeName === 'MeetupDashboard'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupApproved'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.REUSEAPPROVED,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupRejected'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupCompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'QACompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'QAPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'QADashboard'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningDashboard'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningRejected'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningCompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningResult'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            ) : typeName === 'LearningEvaluation'
+                            ? () =>
+                                Navigation.navigate(
+                                  MainNavigationString.COMPLETEDCARD,
+                                  {
+                                    typeName,
+                                  },
+                                )
                         : null
                     }>
                     <View

@@ -1,14 +1,8 @@
 /* eslint-disable prettier/prettier */
 import {useNavigation} from '@react-navigation/native';
-import {
-  Image,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 
-import styles from '../Dashboard/StylesHome'
+import styles from '../Dashboard/StylesHome';
 import LinearGradient from 'react-native-linear-gradient';
 import React from 'react';
 import imagePath from '../../Constants/imagePath';
@@ -19,10 +13,10 @@ const Greetings = () => {
 
   return (
     <>
-    <ScrollView style={{backgroundColor: '#000', padding: 8}}>
+      <ScrollView style={{backgroundColor: '#000', padding: 8}}>
         <View style={styles.container}>
-          <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSALL)}>
+          {/* <View style={styles.superStarHome}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'GreetingAll'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -43,7 +37,7 @@ const Greetings = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSAPPROVED)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.REUSEAPPROVED, {typeName: 'GreetingApproved'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -66,10 +60,10 @@ const Greetings = () => {
                 <Text style={styles.badgeT}>20</Text>
               </Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
 
-          <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSPENDING)}>
+          {/* <View style={styles.superStarHome}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'GreetingPending'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -90,7 +84,7 @@ const Greetings = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSCOMPLETED)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'GreetingCompleted'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -113,10 +107,16 @@ const Greetings = () => {
                 <Text style={styles.badgeT}>20</Text>
               </Text>
             </TouchableOpacity>
-          </View> 
+          </View>  */}
 
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSREGISTERED)}>
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'Registered List',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -132,38 +132,18 @@ const Greetings = () => {
                 <Text style={styles.buttonText}>Registered List</Text>
               </LinearGradient>
               <Image source={imagePath.Completed} style={styles.postImage} />
-             <Text style={styles.badge}>
+              <Text style={styles.badge}>
                 <Text style={styles.badgeT}>20</Text>
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSFORWARD)}>
-              <LinearGradient
-                start={{x: 0, y: 0}}
-                end={{x: 1, y: 0}} 
-                colors={[
-                  '#FFAD00',
-                  '#FFD273',
-                  '#E19A04',
-                  '#FACF75',
-                  '#E7A725',
-                  '#FFAD00',
-                ]}
-                style={styles.linearGradient}>
-                <Text style={styles.buttonText}>Froward To User</Text>
-              </LinearGradient>
-              <Image
-                source={imagePath.Rejected}
-                style={styles.postImage}
-              />
-             <Text style={styles.badge}>
-                <Text style={styles.badgeT}>20</Text>
-              </Text>
-            </TouchableOpacity>
-          </View> 
-
-          <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSEVALUATION)}>
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'ForwardUser',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -175,15 +155,48 @@ const Greetings = () => {
                   '#E7A725',
                   '#FFAD00',
                 ]}
-                style={styles.linearGradient} >
-                <Text style={styles.buttonText}>Evaluation</Text>
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>Froward To User</Text>
               </LinearGradient>
-              <Image source={imagePath.Post} style={styles.postImage} />
-             <Text style={styles.badge}>
+              <Image source={imagePath.Rejected} style={styles.postImage} />
+              <Text style={styles.badge}>
                 <Text style={styles.badgeT}>20</Text>
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.GREETINGSCREATE)} >
+          </View>
+
+          <View style={styles.superStarHome}>
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.GREETINGSEVALUATION)
+              }>
+              <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}}
+                colors={[
+                  '#FFAD00',
+                  '#FFD273',
+                  '#E19A04',
+                  '#FACF75',
+                  '#E7A725',
+                  '#FFAD00',
+                ]}
+                style={styles.linearGradient}>
+                <Text style={styles.buttonText}>Evaluation</Text>
+              </LinearGradient>
+              <Image source={imagePath.Post} style={styles.postImage} />
+              <Text style={styles.badge}>
+                <Text style={styles.badgeT}>20</Text>
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.CREATEFORM, {
+                  typeName: 'GreetingsCreate',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -199,19 +212,15 @@ const Greetings = () => {
                 <Text style={styles.buttonText}>Create</Text>
               </LinearGradient>
               <Image source={imagePath.Post} style={styles.postImage} />
-             {/* <Text style={styles.badge}>
+              {/* <Text style={styles.badge}>
                 <Text style={styles.badgeT}>20</Text>
               </Text> */}
             </TouchableOpacity>
-          </View> 
-
+          </View>
         </View>
-
-    </ScrollView>
-
+      </ScrollView>
     </>
   );
 };
-
 
 export default Greetings;

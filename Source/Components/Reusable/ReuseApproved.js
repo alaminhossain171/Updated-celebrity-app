@@ -158,7 +158,8 @@ const ReuseApproved = ({route}) => {
                         : typeName === 'AuditionApprove'
                         ? () =>
                             Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD, {typeName}
+                              MainNavigationString.COMPLETEDCARD,
+                              {typeName},
                             )
                         : typeName === 'Completed Greeting'
                         ? () =>
@@ -201,6 +202,22 @@ const ReuseApproved = ({route}) => {
                         ? () =>
                             Navigation.navigate(
                               MainNavigationString.COMPLETEDSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'QAApproved'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningApproved'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
                               {
                                 typeName,
                               },
