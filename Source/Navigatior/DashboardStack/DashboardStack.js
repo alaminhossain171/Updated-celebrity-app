@@ -1,6 +1,6 @@
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Dashboard from '../../Screens/Dashboard/Dashboard';
 import MainNavigationString from '../../Constants/MainNavigationString';
 import Post from './../../Screens/Post/Post';
@@ -42,20 +42,28 @@ import QnaCreate from '../../Screens/QnA/QnaCreate';
 import Setting from '../../Screens/Setting/Setting';
 import Schedule from '../../Screens/Schedule/Schedule';
 import MonthSchedule from '../../Screens/Schedule/MonthSchedule';
+import Rejected from './../../Screens/Fangroup/Rejected';
+import RejectedCard from './../../Screens/Fangroup/RejectedCard';
+import Invitation from './../../Screens/Fangroup/Invitation';
+import InvitationCard from './../../Screens/Fangroup/InvitationCard';
+import EditInvitation from './../../Screens/Fangroup/EditInvitation';
+import Accepted from './../../Screens/Fangroup/Accepted';
+import AcceptedCard from './../../Screens/Fangroup/AcceptedCard';
+import AllDataFanGroup from './../../Screens/Fangroup/AllDataFanGroup';
 
 const StackDashbord = createNativeStackNavigator();
 
 const DashboardStack = () => {
   return (
     <StackDashbord.Navigator
-      screenOptions={{headerShown: false,}}
+      screenOptions={{ headerShown: false, }}
       initialRouteName={MainNavigationString.DASHBORD}>
       <StackDashbord.Screen
-      
+
         name={MainNavigationString.DASHBORD}
         component={Dashboard}
       />
-     
+
 
       {/*=========== //post route=============  */}
       <StackDashbord.Screen name={MainNavigationString.POST} component={Post} />
@@ -135,15 +143,26 @@ const DashboardStack = () => {
 
 
       {/*============== Setting==============  */}
-      <StackDashbord.Screen  name={MainNavigationString.SETTING} component={Setting} />
+      <StackDashbord.Screen name={MainNavigationString.SETTING} component={Setting} />
 
       {/*============== Setting==============  */}
-      <StackDashbord.Screen name={MainNavigationString.SCHEDULE}  component={Schedule} />
-      <StackDashbord.Screen name={MainNavigationString.MONTHSCHEDULE}  component={MonthSchedule} />
+      <StackDashbord.Screen name={MainNavigationString.SCHEDULE} component={Schedule} />
+      <StackDashbord.Screen name={MainNavigationString.MONTHSCHEDULE} component={MonthSchedule} />
 
+
+      {/*============== Fangroup ================== */}
+      <StackDashbord.Screen name={MainNavigationString.FANGROUP} component={Fangroup} />
+      <StackDashbord.Screen name={MainNavigationString.REJECTED} component={Rejected} />
+      <StackDashbord.Screen name={MainNavigationString.REJECTEDCARD} component={RejectedCard} />
+      <StackDashbord.Screen name={MainNavigationString.INVITATION} component={Invitation} />
+      <StackDashbord.Screen name={MainNavigationString.INVITATIONCARD} component={InvitationCard} />
+      <StackDashbord.Screen name={MainNavigationString.EDITINVITATION} component={EditInvitation} />
+      <StackDashbord.Screen name={MainNavigationString.ACCEPTED} component={Accepted} />
+      <StackDashbord.Screen name={MainNavigationString.ACCEPTEDCARD} component={AcceptedCard} />
+      <StackDashbord.Screen name={MainNavigationString.ALLDATAFANGROUP} component={AllDataFanGroup} />
     </StackDashbord.Navigator>
 
-    
+
 
 
 

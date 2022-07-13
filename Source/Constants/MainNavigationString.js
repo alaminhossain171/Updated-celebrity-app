@@ -66,7 +66,14 @@ export default {
 
     //FANGROUP
     FANGROUP:'Fangroup',
-
+    REJECTED:'Rejected',
+    REJECTEDCARD:'RejectedCard',
+    INVITATION:'Invitation',
+    INVITATIONCARD:'InviationCard',
+    EDITINVITATION:'EditInviation',
+    ACCEPTED:'Accepted',
+    ACCEPTEDCARD:'AcceptedCard',
+    ALLDATAFANGROUP:'AllDataFanGroup',
     //Wallet
     WALLET: 'Wallet',  
 
@@ -76,4 +83,7 @@ export default {
     //Schedule
     SCHEDULE: 'Schedule',
     MONTHSCHEDULE: 'MonthSchedule',
+
+
+
 }
