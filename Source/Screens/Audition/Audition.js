@@ -21,7 +21,7 @@ const Audition = () => {
     <ScrollView style={{backgroundColor: '#000', padding: 8}}>
         <View style={styles.container}>
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.AUDITIONALL)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'AuditionAll'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -42,7 +42,7 @@ const Audition = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.AUDITIONLIVEEVENT)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: "AuditionLiveEvents"})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -70,7 +70,7 @@ const Audition = () => {
           <View style={styles.superStarHome}>
            
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.AUDITIONAPPROVED)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'AuditionApproved'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -94,7 +94,7 @@ const Audition = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.AUDITIONPENDING)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'AuditionPending'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -118,7 +118,7 @@ const Audition = () => {
 
           <View style={styles.superStarHome}>
            
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.AUDITIONCREATE)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.CREATEFORM, {typeName: 'AuditionCreate'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}

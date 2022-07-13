@@ -19,7 +19,9 @@ const LiveChat = () => {
             <TouchableOpacity
               style={styles.singleContent}
               onPress={() =>
-                Navigation.navigate(MainNavigationString.LIVECHATALL)
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'LiveChatAll',
+                })
               }>
               <LinearGradient
                 start={{x: 0, y: 0}}
@@ -70,9 +72,13 @@ const LiveChat = () => {
           </View>
 
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent}
-            onPress = {() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'LiveChatPending'})}
-            >
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'LiveChatPending',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -93,9 +99,13 @@ const LiveChat = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent}
-            onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'LiveChatRejected'})}
-            >
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'LiveChatRejected',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -118,9 +128,13 @@ const LiveChat = () => {
           </View>
 
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent}
-            onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'LiveChatCompleted'})}
-            >
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'LiveChatCompleted',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -141,9 +155,11 @@ const LiveChat = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent}
-            onPress={() => Navigation.navigate(MainNavigationString.VOICECALLLIST)}
-            >
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.VOICECALLLIST)
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -166,9 +182,13 @@ const LiveChat = () => {
           </View>
 
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent}
-            onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'LiveChatResult'})}
-            >
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'LiveChatResult',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -188,9 +208,13 @@ const LiveChat = () => {
                 <Text style={styles.badgeT}>20</Text>
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.singleContent}
-            onPress={() => Navigation.navigate(MainNavigationString.CREATEFORM, {typeName: 'LiveChatCreate'})}
-            >
+            <TouchableOpacity
+              style={styles.singleContent}
+              onPress={() =>
+                Navigation.navigate(MainNavigationString.CREATEFORM, {
+                  typeName: 'LiveChatCreate',
+                })
+              }>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}

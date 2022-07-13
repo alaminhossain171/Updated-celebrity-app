@@ -7,7 +7,10 @@ import Icon2 from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import imagePath from '../../Constants/imagePath';
 import MainNavigationString from '../../Constants/MainNavigationString';
-const VoiceCallList = ({navigation}) => {
+const VoiceCallList = ({navigation, route}) => {
+  const {typeName} = route.params;
+  console.log('=======>', typeName);
+
   return (
     <View style={styles.container}>
       {/*............. top view started..........  */}
@@ -19,7 +22,7 @@ const VoiceCallList = ({navigation}) => {
         </TouchableOpacity>
         <View style={styles.scheduleView}>
           <Text style={{color: 'white', fontSize: 20, textAlign: 'center'}}>
-            Pending Schedule
+          {typeName}
           </Text>
         </View>
       </View>

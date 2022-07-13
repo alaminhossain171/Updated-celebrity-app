@@ -86,7 +86,6 @@ const ReuseCard = ({route}) => {
                   />
                 </View>
 
-                
                 <View style={{marginVertical: 10}}>
                   <Text
                     style={{
@@ -112,7 +111,7 @@ const ReuseCard = ({route}) => {
                   <TouchableOpacity
                     style={styles.touchableOpacityBtn}
                     onPress={
-                       typeName === 'LiveChatPending'
+                      typeName === 'LiveChatPending'
                         ? () =>
                             Navigation.navigate(
                               MainNavigationString.PENDINGCARD,
@@ -171,8 +170,7 @@ const ReuseCard = ({route}) => {
                               },
                             )
                         : null
-                    }
-                  >
+                    }>
                     <View
                       style={{
                         flexDirection: 'row',
@@ -794,7 +792,6 @@ const styles = StyleSheet.create({
     borderColor: 'white',
   },
 
-
   mainMeetUpViewA: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -981,7 +978,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
   },
-
 });
 
 //make this component available to the app
