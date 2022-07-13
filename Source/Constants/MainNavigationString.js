@@ -91,6 +91,16 @@ export default {
 
   //Wallet
   WALLET: 'Wallet',
+  //FANGROUP
+  FANGROUP: 'Fangroup',
+  REJECTED: 'Rejected',
+  REJECTEDCARD: 'RejectedCard',
+  INVITATION: 'Invitation',
+  INVITATIONCARD: 'InviationCard',
+  EDITINVITATION: 'EditInviation',
+  ACCEPTED: 'Accepted',
+  ACCEPTEDCARD: 'AcceptedCard',
+  ALLDATAFANGROUP: 'AllDataFanGroup',
 
   //Setting
   SETTING: 'Setting',
