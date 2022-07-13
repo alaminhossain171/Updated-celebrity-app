@@ -222,6 +222,14 @@ const ReuseApproved = ({route}) => {
                                 typeName,
                               },
                             )
+                        : typeName === 'PostApproved'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
                         : null
                     }>
                     <View

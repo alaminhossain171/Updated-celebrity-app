@@ -42,7 +42,7 @@ const Post = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.POSTAPPROVED)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.REUSEAPPROVED, {typeName: 'PostApproved'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -89,7 +89,7 @@ const Post = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent}onPress={() => Navigation.navigate(MainNavigationString.POSTREJECTED, {typeName: 'RejectedPost'})}>
+            <TouchableOpacity style={styles.singleContent}onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'RejectedPost'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 

@@ -272,14 +272,39 @@ const ReuseCard = ({route}) => {
                               {
                                 typeName,
                               },
-                            ) : typeName === 'LearningEvaluation'
-                            ? () =>
-                                Navigation.navigate(
-                                  MainNavigationString.COMPLETEDCARD,
-                                  {
-                                    typeName,
-                                  },
-                                )
+                            )
+                        : typeName === 'LearningEvaluation'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'RejectedPost'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'PendingPost'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'PostAll'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
                         : null
                     }>
                     <View
