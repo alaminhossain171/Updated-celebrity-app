@@ -42,6 +42,24 @@ export default {
   LEARNING: 'Learning',
   LEARNINGALL: 'LearningAll',
 
+
+    //Star Showcase
+    STARSHOWCASE:'StarShowcase',
+    AUCTION:'Auction',
+    MARKETPLACE:'MarketPlace',
+    PENDINGREQUEST:'PendingRequest',
+    
+    AUCTIONSOLDPRODUCT:'AuctionSoldProduct',
+    AUCTIONLIVEBIDDING:'AuctionLiveBidding',
+    AUCTIONLIVEBIDDING:'AuctionLiveBidding',
+    AUCTIONADDPRODUCT:'AuctionAddProduct',
+
+
+    MARKETPLACEADDPRODUCT:'MarketPlaceAddProduct',
+    MARKETPLACESOLDPRODUCT:'MarketPlaceSoldProduct',
+    MARKETPLACEUNSOLDPRODUCT:'MarketPlaceUnsoldProduct',
+    
+    EDITPRODUCT:'EditProduct',
   //Live
   LIVE: 'Live',
 

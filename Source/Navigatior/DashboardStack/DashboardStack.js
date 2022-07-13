@@ -46,13 +46,23 @@ import VoiceCallList from '../../Components/Reusable/VoiceCallList';
 import LiveChatAll from '../../Screens/Live-chat/LiveChatAll';
 import ReuseApproved from '../../Components/Reusable/ReuseApproved';
 import VoiceMsg from '../../Components/Reusable/VoiceMsg';
-import CreateReusableForm from '../../Components/Reusable/CreateReusableForm';
+import CreateReusableForm from '../../Components/Reusable/CreateReusableForm'
 import CompletedCard from '../../Components/Reusable/CompletedCard';
 import EditCard from '../../Components/Reusable/EditCard';
 import PendingCard from '../../Components/Reusable/PendingCard';
 import Setting from '../../Screens/Setting/Setting';
 import Schedule from '../../Screens/Schedule/Schedule';
 import MonthSchedule from '../../Screens/Schedule/MonthSchedule';
+import Auction from '../../Screens/Star-Showcase/Auction';
+import MarketPlace from '../../Screens/Star-Showcase/MarketPlace';
+import PendingRequest from '../../Screens/Star-Showcase/PendingRequest';
+import AuctionSoldProduct from '../../Screens/Star-Showcase/AuctionSoldProduct';
+import AuctionLiveBidding from '../../Screens/Star-Showcase/AuctionLiveBidding';
+import AuctionAddProduct from '../../Screens/Star-Showcase/AuctionAddProduct';
+import MarketPlaceSoldProduct from '../../Screens/Star-Showcase/MarketPlaceSoldProduct';
+import MarketPlaceUnsoldProduct from '../../Screens/Star-Showcase/MarketPlaceUnsoldProduct';
+import MarketPlaceAddProduct from '../../Screens/Star-Showcase/MarketPlaceAddProduct';
+import EditProduct from '../../Screens/Star-Showcase/EditProduct';
 import Rejected from './../../Screens/Fangroup/Rejected';
 import RejectedCard from './../../Screens/Fangroup/RejectedCard';
 import Invitation from './../../Screens/Fangroup/Invitation';
@@ -136,11 +146,19 @@ const DashboardStack = () => {
       />
 
       {/*====================== Star Showcase==================  */}
-      <StackDashbord.Screen
-        name={MainNavigationString.STARSHOWCASE}
-        component={StarShowcase}
-      />
-
+      <StackDashbord.Screen name={MainNavigationString.STARSHOWCASE} component={StarShowcase} />
+      <StackDashbord.Screen name={MainNavigationString.AUCTION} component={Auction} />
+      <StackDashbord.Screen name={MainNavigationString.MARKETPLACE} component={MarketPlace} />
+      <StackDashbord.Screen name={MainNavigationString.PENDINGREQUEST} component={PendingRequest} />
+      <StackDashbord.Screen name={MainNavigationString.AUCTIONSOLDPRODUCT} component={AuctionSoldProduct} />
+      <StackDashbord.Screen name={MainNavigationString.AUCTIONLIVEBIDDING} component={AuctionLiveBidding} />
+      <StackDashbord.Screen name={MainNavigationString.AUCTIONADDPRODUCT} component={AuctionAddProduct} />
+      <StackDashbord.Screen name={MainNavigationString.MARKETPLACESOLDPRODUCT} component={MarketPlaceSoldProduct} />
+      <StackDashbord.Screen name={MainNavigationString.MARKETPLACEUNSOLDPRODUCT} component={MarketPlaceUnsoldProduct} />
+      <StackDashbord.Screen name={MainNavigationString.MARKETPLACEADDPRODUCT} component={MarketPlaceAddProduct} />
+      <StackDashbord.Screen name={MainNavigationString.EDITPRODUCT} component={EditProduct} />
+      
+      
       {/* =======================Learning =============================== */}
       <StackDashbord.Screen
         name={MainNavigationString.LEARNING}
