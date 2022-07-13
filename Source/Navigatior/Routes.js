@@ -23,7 +23,7 @@ function Routes() {
 
     return (
         <NavigationContainer >
-            {/* <Drawer.Navigator
+            <Drawer.Navigator
 
                 screenOptions={{
                     headerStyle: {
@@ -38,11 +38,11 @@ function Routes() {
                 drawerContent={(props) => <CustomDrawer {...props} />}
             >
                 <Drawer.Screen name={MainNavigationString.TAB} component={TabRoutes} />
-            </Drawer.Navigator> */}
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
+            </Drawer.Navigator>
+            {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
 
                 {AuthStack(Stack)}
-            </Stack.Navigator>
+            </Stack.Navigator> */}
         </NavigationContainer>
     );
 }
