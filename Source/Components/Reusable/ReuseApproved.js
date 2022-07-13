@@ -24,7 +24,7 @@ import LottieView from 'lottie-react-native';
 
 // create a component
 const ReuseApproved = ({route}) => {
-  const {typeName} = route.params;
+  let {typeName} = route.params;
 
   const {width} = useWindowDimensions();
   const windowWidth = Dimensions.get('window').width;
@@ -131,7 +131,7 @@ const ReuseApproved = ({route}) => {
 
                       fontWeight: 'bold',
                     }}>
-                    Shakib
+                    Shakib {typeName}
                   </Text>
                   <Text style={{color: '#ff0'}}>5:32PM Feb 2022</Text>
                 </View>
@@ -155,10 +155,10 @@ const ReuseApproved = ({route}) => {
                               MainNavigationString.COMPLETEDCARD,
                               {typeName},
                             )
-                        : typeName === 'Live Chat List'
+                        : typeName === 'AuditionApprove'
                         ? () =>
                             Navigation.navigate(
-                              MainNavigationString.VOICECALLLIST,
+                              MainNavigationString.COMPLETEDCARD, {typeName}
                             )
                         : typeName === 'Completed Greeting'
                         ? () =>

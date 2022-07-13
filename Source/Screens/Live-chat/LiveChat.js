@@ -158,7 +158,9 @@ const LiveChat = () => {
             <TouchableOpacity
               style={styles.singleContent}
               onPress={() =>
-                Navigation.navigate(MainNavigationString.VOICECALLLIST)
+                Navigation.navigate(MainNavigationString.VIEWCARD, {
+                  typeName: 'LiveChatList',
+                })
               }>
               <LinearGradient
                 start={{x: 0, y: 0}}

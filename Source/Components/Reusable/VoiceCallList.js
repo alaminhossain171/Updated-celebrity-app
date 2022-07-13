@@ -8,7 +8,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import imagePath from '../../Constants/imagePath';
 import MainNavigationString from '../../Constants/MainNavigationString';
 const VoiceCallList = ({navigation, route}) => {
-  const {typeName} = route.params;
+  let {typeName} = route.params;
   console.log('=======>', typeName);
 
   return (
@@ -22,7 +22,7 @@ const VoiceCallList = ({navigation, route}) => {
         </TouchableOpacity>
         <View style={styles.scheduleView}>
           <Text style={{color: 'white', fontSize: 20, textAlign: 'center'}}>
-          {typeName}
+            {typeName}
           </Text>
         </View>
       </View>
@@ -59,7 +59,9 @@ const VoiceCallList = ({navigation, route}) => {
           <View style={{justifyContent: 'center', alignItems: 'center'}}>
             <TouchableOpacity
               style={styles.recBtn}
-              onPress={() => navigation.navigate(MainNavigationString.VOICEMSG)}>
+              onPress={() =>
+                navigation.navigate(MainNavigationString.VOICEMSG)
+              }>
               <View style={styles.recBtn2}>
                 <Icon name="mic" size={15} color="white" />
                 <Text style={{color: 'white'}}>Rec</Text>

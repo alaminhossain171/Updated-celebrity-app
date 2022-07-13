@@ -117,54 +117,54 @@ const ReuseCard = ({route}) => {
                               MainNavigationString.PENDINGCARD,
                               {typeName},
                             )
-                        : typeName === 'Live Chat List'
+                        : typeName === 'LiveChatAll'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {typeName},
+                            )
+                        : typeName === 'LiveChatRejected'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {typeName},
+                            )
+                        : typeName === 'LiveChatCompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LiveChatResult'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LiveChatList'
                         ? () =>
                             Navigation.navigate(
                               MainNavigationString.VOICECALLLIST,
-                              {typeName},
-                            )
-                        : typeName === 'Completed Greeting'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDSCHEDULE,
-                              {typeName},
-                            )
-                        : typeName === 'Pending Greeting'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGSCHEDULE,
                               {
                                 typeName,
                               },
                             )
-                        : typeName === 'Completed Live'
+                        : typeName === 'AuditionLiveEvents'
                         ? () =>
                             Navigation.navigate(
-                              MainNavigationString.COMPLETEDSCHEDULE,
+                              MainNavigationString.COMPLETEDCARD,
                               {
                                 typeName,
                               },
                             )
-                        : typeName === 'Pending Live'
+                        : typeName === 'AuditionPending'
                         ? () =>
                             Navigation.navigate(
-                              MainNavigationString.PENDINGSCHEDULE,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'Pending QA'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGSCHEDULE,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'COMPLETESCHEDULE'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDSCHEDULE,
+                              MainNavigationString.PENDINGCARD,
                               {
                                 typeName,
                               },

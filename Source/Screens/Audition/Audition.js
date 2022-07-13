@@ -70,7 +70,7 @@ const Audition = () => {
           <View style={styles.superStarHome}>
            
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'AuditionApproved'})}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.REUSEAPPROVED, {typeName: 'AuditionApprove'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
