@@ -4,13 +4,13 @@
 
 import * as React from 'react';
 // import { View, Text } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import Dashboard from '../Screens/Dashboard/Dashboard'
 import MainNavigationString from '../Constants/MainNavigationString';
 
 // import MainStack from './MainStack';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import TabRoutes from './TabRoutes';
 import CustomDrawer from '../Components/CustomDrawer/CustomDrawer';
 import AuthStack from './AuthStack';
@@ -23,28 +23,28 @@ function Routes() {
 
     return (
         <NavigationContainer >
-            <Drawer.Navigator
-            
-            screenOptions={{
-                headerStyle: {
-                  backgroundColor: '#272727',
+            {/* <Drawer.Navigator
 
-                  
-                },
-               
-                headerTintColor: 'white',
-              
-            }}
+                screenOptions={{
+                    headerStyle: {
+                        backgroundColor: '#272727',
+
+
+                    },
+
+                    headerTintColor: 'white',
+
+                }}
                 drawerContent={(props) => <CustomDrawer {...props} />}
             >
                 <Drawer.Screen name={MainNavigationString.TAB} component={TabRoutes} />
-            </Drawer.Navigator>
-            {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
+            </Drawer.Navigator> */}
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
 
                 {AuthStack(Stack)}
-            </Stack.Navigator> */}
-    </NavigationContainer>
-  );
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
 
 export default Routes;

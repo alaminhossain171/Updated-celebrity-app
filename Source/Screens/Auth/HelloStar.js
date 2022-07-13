@@ -17,21 +17,23 @@ import {
 import imagePath from '../../Constants/imagePath';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
-import { AuthContext } from '../../Constants/context';
+// import { AuthContext } from '../../Constants/context';
 import LoaderComp from '../../Components/LoaderComp';
-import axios from 'axios';
+// import axios from 'axios';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import AppUrl from '../../RestApi/AppUrl';
-import { RadioButton } from 'react-native-paper';
-import navigationStrings from '../../Constants/navigationStrings';
+// import AppUrl from '../../RestApi/AppUrl';
+// import { RadioButton } from 'react-native-paper';
+// import MainNavigationString from '../../Constants/MainNavigationString';
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RenderHtml from 'react-native-render-html';
+import MainNavigationString from '../../Constants/MainNavigationString';
 // create a component
 const HelloStar = () => {
     const [isSelected, setSelection] = useState(false);
     const navigation = useNavigation();
     const windowWidth = Dimensions.get('window').width;
-    const { authContext, axiosConfig } = useContext(AuthContext);
+    // const { authContext, axiosConfig } = useContext(AuthContext);
     const [email, setEmail] = useState(null);
     const [pass, setPass] = useState(null);
     const [buffer, setBuffer] = useState(false);
@@ -43,58 +45,58 @@ const HelloStar = () => {
 
 
 
-    useEffect(() => {
-        getInstruction()
-    }, [])
+    // useEffect(() => {
+    //     getInstruction()
+    // }, [])
 
-    const getInstruction = () => {
-        setBuffer(true);
+    // const getInstruction = () => {
+    //     setBuffer(true);
 
 
 
-        axios
-            .get(AppUrl.StarInstrucation, axiosConfig)
-            .then(res => {
-                setBuffer(false);
+    //     axios
+    //         .get(AppUrl.StarInstrucation, axiosConfig)
+    //         .then(res => {
+    //             setBuffer(false);
 
-                if (res.data.status === 200) {
-                    setInformation(res.data.star_details)
-                } else {
-                    setBuffer(false);
-                    setError('user and password not match !!');
-                }
-            })
-            .catch(err => {
-                ToastAndroid.show(
-                    'Network Problem, Check you Internet',
-                    ToastAndroid.SHORT,
-                );
-                setBuffer(false);
-                console.log(err);
-            });
+    //             if (res.data.status === 200) {
+    //                 setInformation(res.data.star_details)
+    //             } else {
+    //                 setBuffer(false);
+    //                 setError('user and password not match !!');
+    //             }
+    //         })
+    //         .catch(err => {
+    //             ToastAndroid.show(
+    //                 'Network Problem, Check you Internet',
+    //                 ToastAndroid.SHORT,
+    //             );
+    //             setBuffer(false);
+    //             console.log(err);
+    //         });
 
-    };
+    // };
 
-    const source = {
-        html: `<div style='color:#e6e6e6'>${information?.terms_and_condition}</div>`
-    };
+    // const source = {
+    //     html: `<div style='color:#e6e6e6'>${information?.terms_and_condition}</div>`
+    // };
 
-    const redirectTodeshbord = () => {
-        if (isSelected) {
-            authContext.demoLogin()
-            navigation.navigate(navigationStrings.CONGRATULATIONS)
-        } else {
-            ToastAndroid.show(
-                'please accept our terms and conditions',
-                ToastAndroid.SHORT,
-            );
-        }
-    }
+    // const redirectTodeshbord = () => {
+    //     if (isSelected) {
+    //         authContext.demoLogin()
+    //         navigation.navigate(MainNavigationString.CONGRATULATIONS)
+    //     } else {
+    //         ToastAndroid.show(
+    //             'please accept our terms and conditions',
+    //             ToastAndroid.SHORT,
+    //         );
+    //     }
+    // }
 
     return (
         <>
-            {buffer ?
-                <LoaderComp /> : <></>}
+            {/* {buffer ?
+                <LoaderComp /> : <></>} */}
             <KeyboardAwareScrollView>
                 <ImageBackground source={imagePath.background} resizeMode="cover" style={windowWidth > 600 ?
                     styles.containerWideScreen : styles.container
@@ -120,10 +122,10 @@ const HelloStar = () => {
 
                             {/* button */}
                             <ScrollView style={{ height: 120, }}>
-                                <RenderHtml
+                                {/* <RenderHtml
                                     contentWidth={width}
                                     source={source}
-                                />
+                                /> */}
                                 {/* <Text style={{ color: '#E2BC6C', textAlign: 'justify', paddingHorizontal: 20, }}>
                                     Lorem Ipsum is simply dummy text of the printingand typesetting industry. Lorem Ipsum
                                     has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -141,9 +143,9 @@ const HelloStar = () => {
                             <View style={styles.Login_btn_container}>
                                 <Text style={{ color: '#E2BC6C', textAlign: 'center' }}>
 
-                                    <TouchableOpacity style={styles.label} onPress={() => setSelection(!isSelected)} >
+                                    <TouchableOpacity style={styles.label}  >
 
-                                        <Text>
+                                        {/* <Text>
                                             {isSelected ? (
 
                                                 <Icon name="radiobox-marked" size={20} color="#E2BC6C" />
@@ -151,13 +153,13 @@ const HelloStar = () => {
                                                 <Icon name="radiobox-blank" size={20} color="red" />
                                             )
                                             }
-                                        </Text>
+                                        </Text> */}
                                         <Text style={styles.TeXtXS}> Accept terms & conditions </Text>
                                     </TouchableOpacity>
 
                                 </Text>
                                 <TouchableOpacity style={styles.login_btn}
-                                    onPress={redirectTodeshbord}
+                                    // onPress={redirectTodeshbord}
                                 >
                                     <Text style={styles.input_title}>Next</Text>
                                 </TouchableOpacity>

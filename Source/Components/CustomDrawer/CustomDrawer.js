@@ -28,7 +28,7 @@ function CustomDrawer(props) {
         <View style={{marginLeft: 10, paddingVertical: 20}}>
           <Image
             source={{
-              uri: `https://cdn.vox-cdn.com/thumbor/ErCt2DrBrCpSRSyrM4TOepiofqo=/0x0:4000x2800/1200x800/filters:focal(1680x1080:2320x1720)/cdn.vox-cdn.com/uploads/chorus_image/image/70986353/1395371333.0.jpg`,
+              uri: `https://api.bdcrictime.com/players/348.png`,
             }}
             style={{
               height: 60,
@@ -39,9 +39,9 @@ function CustomDrawer(props) {
             }}
           />
           <Text style={{color: 'white', fontSize: 18, marginVertical: 3}}>
-            Elon Musk
+          Shakib Al Hasan
           </Text>
-          <Text style={{color: 'gray', fontSize: 10}}>porimoni@gmail.com</Text>
+          <Text style={{color: 'gray', fontSize: 10}}>Shakib@gmail.com</Text>
           <Text style={{color: 'gold', fontSize: 14, marginVertical: 1}}>
             Superstar
           </Text>

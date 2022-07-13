@@ -6,6 +6,12 @@ export default {
     OTP: 'Otp',
     INSTRUCTION: 'Instruction',
     STARAUTH: 'StarAuth',
-    QRC:'Qrc'
+    QRC:'Qrc',
+    CONGRATULATION:'Congratulation',
+    HELLOSTAR:'HelloStar',
+    LOADER:'Loader',
+    OTP:'Otp',
+    USERINFORMATION:'UserInformation',
+    VIRTUALTOUR:'VirtualTour'
 
 }
