@@ -119,14 +119,7 @@ const Post = () => {
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
-                colors={[
-                  '#FFAD00',
-                  '#FFD273',
-                  '#E19A04',
-                  '#FACF75',
-                  '#E7A725',
-                  '#FFAD00',
-                ]}
+                colors={[ '#FFAD00', '#FFD273', '#E19A04', '#FACF75', '#E7A725', '#FFAD00', ]}
                 style={styles.linearGradient}>
                 <Text style={styles.buttonText}>Create</Text>
               </LinearGradient>

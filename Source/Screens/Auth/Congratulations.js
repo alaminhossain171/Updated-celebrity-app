@@ -12,13 +12,11 @@ import {
 import imagePath from '../../Constants/imagePath';
 import * as Animatable from 'react-native-animatable';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { useContext } from 'react';
-import { AuthContext } from '../../Constants/context';
 
 // create a component
 const Congratulations = () => {
     const windowWidth = Dimensions.get('window').width;
-    const {authContext} = useContext(AuthContext);
+
     return (
         <>
         

@@ -1,6 +1,6 @@
 //import liraries
 import {useNavigation} from '@react-navigation/native';
-import axios from 'axios';
+// import axios from 'axios';
 import React, {useContext, useState} from 'react';
 import {
   Dimensions,
@@ -18,70 +18,70 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LoaderComp from '../../Components/LoaderComp';
-import {AuthContext} from '../../Constants/context';
+// import {AuthContext} from '../../Constants/context';
 import imagePath from '../../Constants/imagePath';
-import AppUrl from '../../RestApi/AppUrl';
+// import AppUrl from '../../RestApi/AppUrl';
 
 // create a component
 const Login = () => {
   const navigation = useNavigation();
   const windowWidth = Dimensions.get('window').width;
-  const {authContext} = useContext(AuthContext);
+  // const {authContext} = useContext(AuthContext);
   const [email, setEmail] = useState(null);
   const [pass, setPass] = useState(null);
   const [buffer, setBuffer] = useState(false);
   const [error, setError] = useState(null);
   const [showPass, setShowPass] = useState(true);
 
-  const HandelLogin = () => {
-    setBuffer(true);
+  // const HandelLogin = () => {
+  //   setBuffer(true);
 
-    if (email != null || pass != null) {
-      const data = {
-        email: email,
-        password: pass,
-      };
+  //   if (email != null || pass != null) {
+  //     const data = {
+  //       email: email,
+  //       password: pass,
+  //     };
 
-      axios
-        .post(AppUrl.UserLogin, data)
-        .then(res => {
-          //console.log(res.data)
-          if (res.data.status === 200) {
-            if (res.data.user.otp_verified_at) {
-              setBuffer(false);
-              authContext.signIn(res.data.token, res.data.user);
-            } else {
-              authContext.signUp(res.data.token, res.data.user);
-              navigation.navigate('Otp', {
-                phone: res.data.user.phone,
-                user: {
-                  token: res.data.token,
-                  information: res.data.user,
-                },
-              });
-            }
-          } else {
-            setBuffer(false);
-            setError('user and password not match !!');
-          }
-        })
-        .catch(err => {
-          ToastAndroid.show(
-            'Network Problem, Check you Internet',
-            ToastAndroid.SHORT,
-          );
-          setBuffer(false);
-          console.log(err);
-        });
-    } else {
-      setError('All field required !!');
-      setBuffer(false);
-    }
-  };
+  //     axios
+  //       .post(AppUrl.UserLogin, data)
+  //       .then(res => {
+  //         //console.log(res.data)
+  //         if (res.data.status === 200) {
+  //           if (res.data.user.otp_verified_at) {
+  //             setBuffer(false);
+  //             authContext.signIn(res.data.token, res.data.user);
+  //           } else {
+  //             authContext.signUp(res.data.token, res.data.user);
+  //             navigation.navigate('Otp', {
+  //               phone: res.data.user.phone,
+  //               user: {
+  //                 token: res.data.token,
+  //                 information: res.data.user,
+  //               },
+  //             });
+  //           }
+  //         } else {
+  //           setBuffer(false);
+  //           setError('user and password not match !!');
+  //         }
+  //       })
+  //       .catch(err => {
+  //         ToastAndroid.show(
+  //           'Network Problem, Check you Internet',
+  //           ToastAndroid.SHORT,
+  //         );
+  //         setBuffer(false);
+  //         console.log(err);
+  //       });
+  //   } else {
+  //     setError('All field required !!');
+  //     setBuffer(false);
+  //   }
+  // };
 
   return (
     <>
-      {buffer ? <LoaderComp /> : <></>}
+      {/* {buffer ? <LoaderComp /> : <></>} */}
       <KeyboardAwareScrollView>
         <ImageBackground
           source={imagePath.background}
@@ -164,7 +164,7 @@ const Login = () => {
               <View style={styles.Login_btn_container}>
                 <TouchableOpacity
                   style={styles.login_btn}
-                  onPress={() => authContext.demoLogin()}>
+                >
                   <Text style={styles.input_title}>LOGIN</Text>
                 </TouchableOpacity>
               </View>

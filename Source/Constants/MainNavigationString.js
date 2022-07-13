@@ -22,6 +22,10 @@ export default {
   LIVECHAT: 'LiveChat',
   LIVECHATALL: 'LiveChatAll',
   LIVECHATAPPROVE: 'LiveChatApprove',
+  DASHBORD: 'Dashbord',
+  LOGIN: 'Login',
+  TAB: 'Home',
+  DASHBORD: 'Dashbord',
 
   //Audition
   AUDITION: 'Audition',
@@ -82,4 +86,16 @@ export default {
   EDITCARD: 'EditCard',
   COMPLETEDCARD: 'CompletedCard',
   PENDINGCARD: 'PendingCard',
+  //FANGROUP
+  FANGROUP: 'Fangroup',
+
+  //Wallet
+  WALLET: 'Wallet',
+
+  //Setting
+  SETTING: 'Setting',
+
+  //Schedule
+  SCHEDULE: 'Schedule',
+  MONTHSCHEDULE: 'MonthSchedule',
 };

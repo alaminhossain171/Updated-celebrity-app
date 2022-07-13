@@ -15,68 +15,68 @@ import {
 import imagePath from '../../Constants/imagePath';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
-import { AuthContext } from '../../Constants/context';
-import LoaderComp from '../../Components/LoaderComp';
-import axios from 'axios';
+// import { AuthContext } from '../../Constants/context';
+// import LoaderComp from '../../Components/LoaderComp';
+// import axios from 'axios';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import AppUrl from '../../RestApi/AppUrl';
+// import AppUrl from '../../RestApi/AppUrl';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
-import navigationStrings from '../../Constants/navigationStrings';
+// import navigationStrings from '../../Constants/navigationStrings';
 
 // create a component
 const Otp = ({ route }) => {
     const navigation = useNavigation();
     const windowWidth = Dimensions.get('window').width;
-    const { authContext, axiosConfig } = useContext(AuthContext);
+    // const { authContext, axiosConfig } = useContext(AuthContext);
     const [email, setEmail] = useState(null);
     const [pass, setPass] = useState(null);
     const [buffer, setBuffer] = useState(false);
     const [error, setError] = useState(null);
     const [showPass, setShowPass] = useState(true);
     const [data, setData] = useState(null);
-    const { phone } = route.params
+    // const { phone } = route.params
 
-    const HandelLogin = () => {
-        setBuffer(true);
+    // const HandelLogin = () => {
+    //     setBuffer(true);
 
-        const fdata = {
-            otp: data
-        }
+    //     const fdata = {
+    //         otp: data
+    //     }
 
 
-        axios
-            .post(`https://backend.hellosuperstars.com/api/star_otp_verify`, fdata, axiosConfig)
-            .then(res => {
-                setBuffer(false);
-                console.log(res.data)
-                if (res.data.status === 200 && res.data.auth_type === "star") {
-                    authContext.Otp()
-                    navigation.navigate(navigationStrings.HELLOSTAR)
-                } else {
+    //     axios
+    //         .post(`https://backend.hellosuperstars.com/api/star_otp_verify`, fdata, axiosConfig)
+    //         .then(res => {
+    //             setBuffer(false);
+    //             console.log(res.data)
+    //             if (res.data.status === 200 && res.data.auth_type === "star") {
+    //                 authContext.Otp()
+    //                 navigation.navigate(navigationStrings.HELLOSTAR)
+    //             } else {
 
-                    setBuffer(false);
-                    ToastAndroid.show(
-                        'OTP not match !',
-                        ToastAndroid.SHORT,
-                    );
-                }
-            })
-            .catch(err => {
-                ToastAndroid.show(
-                    'Network Problem, Check you Internet',
-                    ToastAndroid.SHORT,
-                );
-                setBuffer(false);
-                console.log(err);
-            });
+    //                 setBuffer(false);
+    //                 ToastAndroid.show(
+    //                     'OTP not match !',
+    //                     ToastAndroid.SHORT,
+    //                 );
+    //             }
+    //         })
+    //         .catch(err => {
+    //             ToastAndroid.show(
+    //                 'Network Problem, Check you Internet',
+    //                 ToastAndroid.SHORT,
+    //             );
+    //             setBuffer(false);
+    //             console.log(err);
+    //         });
 
-    };
+    // };
 
     return (
         <>
-            {buffer ? <LoaderComp /> : <></>}
+            {/* {buffer ? <LoaderComp /> : <></>} */}
             <KeyboardAwareScrollView>
                 <ImageBackground
                     source={imagePath.background}
@@ -102,7 +102,7 @@ const Otp = ({ route }) => {
                             {/* <Text style={styles.title}>Welcome To{'\n'}Hello Super Star</Text> */}
                             <Text style={styles.TextR}>OTP Verify</Text>
                             <Text style={styles.TextDes}>
-                                We have sent an SMS to your Phone Number {phone && phone}
+                                We have sent an SMS to your Phone Number 
                             </Text>
                             <OTPInputView style={styles.InputOTPx} pinCount={6} autoFocusOnLoad
                                 codeInputFieldStyle={styles.underlineStyleBase} codeInputHighlightStyle={styles.underlineStyleHighLighted}
@@ -119,7 +119,7 @@ const Otp = ({ route }) => {
                                 </Text> */}
                                 <TouchableOpacity
                                     style={styles.login_btn}
-                                    onPress={HandelLogin}
+                                    // onPress={HandelLogin}
                                 // onPress={() => navigation.navigate(navigationStrings.HELLOSTAR)}
                                 >
                                     <Text style={styles.input_title}>Next</Text>
