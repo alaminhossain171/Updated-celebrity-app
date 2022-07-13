@@ -33,7 +33,7 @@ const AuthStack = (Stack) => {
 
 
 
-            <Stack.Screen name={AuthNavigationString.CONGRATULATION} component={Congratulations} />
+            {/* <Stack.Screen name={AuthNavigationString.CONGRATULATION} component={Congratulations} /> */}
 
 
 
