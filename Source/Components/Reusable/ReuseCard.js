@@ -23,13 +23,46 @@ import LottieView from 'lottie-react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 // create a component
-const PostRejected = ({route}) => {
+const ReuseCard = ({route}) => {
   const animation = useRef(null);
   const {typeName} = route.params;
   console.log('=======>', typeName);
   const {width} = useWindowDimensions();
   const windowWidth = Dimensions.get('window').width;
   const Navigation = useNavigation();
+
+  let deadline = 'august, 06, 2022';
+
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  const leading0 = num => {
+    return num < 10 ? '0' + num : num;
+  };
+
+  const getTimeUntil = deadline => {
+    const time = Date.parse(deadline) - Date.parse(new Date());
+    console.log(time);
+    if (time < 0) {
+      setDays(0);
+      setHours(0);
+      setMinutes(0);
+      setSeconds(0);
+    } else {
+      setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
+      setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
+      setMinutes(Math.floor((time / 1000 / 60) % 60));
+      setSeconds(Math.floor((time / 1000) % 60));
+    }
+  };
+
+  useEffect(() => {
+    setInterval(() => getTimeUntil(deadline), 1000);
+
+    return () => getTimeUntil(deadline);
+  }, [deadline]);
 
   return (
     <>
@@ -77,74 +110,203 @@ const PostRejected = ({route}) => {
                 <View style={styles.btnView}>
                   <TouchableOpacity
                     style={styles.touchableOpacityBtn}
-                    // onPress={
-                    //   typeName === 'Rejected'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Approved QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Live Chat List'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Pending Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Completed Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'COMPLETESCHEDULE'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : null
-                    // }
-                  >
+                    onPress={
+                      typeName === 'LiveChatPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {typeName},
+                            )
+                        : typeName === 'LiveChatAll'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {typeName},
+                            )
+                        : typeName === 'LiveChatRejected'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {typeName},
+                            )
+                        : typeName === 'LiveChatCompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LiveChatResult'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LiveChatList'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.VOICECALLLIST,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'AuditionLiveEvents'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'AuditionPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupDashboard'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupApproved'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.REUSEAPPROVED,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupRejected'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'MeetupCompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'QACompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'QAPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'QADashboard'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningDashboard'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningRejected'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningCompleted'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningResult'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'LearningEvaluation'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'RejectedPost'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'PendingPost'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'PostAll'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
+                        : null
+                    }>
                     <View
                       style={{
                         flexDirection: 'row',
@@ -955,4 +1117,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default PostRejected;
+export default ReuseCard;

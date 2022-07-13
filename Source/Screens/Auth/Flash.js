@@ -34,7 +34,7 @@ const Flash = () => {
 
     const redirectLoginPage = () => {
         // clearInterval(redirectToLogin)
-        // navigation.navigate(navigationStrings.CELEBRITYAUTH)
+        // navigation.navigate(MainNavigationString.CELEBRITYAUTH)
     }
 
     // auto redirect to login
@@ -42,7 +42,7 @@ const Flash = () => {
 
     const hendelAuthpage = () => {
         // clearInterval(redirectToLogin)
-        // navigation.navigate(navigationStrings.CELEBRITYAUTH)
+        // navigation.navigate(MainNavigationString.CELEBRITYAUTH)
 
     }
     return (

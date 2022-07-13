@@ -23,7 +23,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
-// import navigationStrings from '../../Constants/navigationStrings';
+// import MainNavigationString from '../../Constants/MainNavigationString';
 
 // create a component
 const Otp = ({ route }) => {
@@ -53,7 +53,7 @@ const Otp = ({ route }) => {
     //             console.log(res.data)
     //             if (res.data.status === 200 && res.data.auth_type === "star") {
     //                 authContext.Otp()
-    //                 navigation.navigate(navigationStrings.HELLOSTAR)
+    //                 navigation.navigate(MainNavigationString.HELLOSTAR)
     //             } else {
 
     //                 setBuffer(false);
@@ -120,7 +120,7 @@ const Otp = ({ route }) => {
                                 <TouchableOpacity
                                     style={styles.login_btn}
                                     // onPress={HandelLogin}
-                                // onPress={() => navigation.navigate(navigationStrings.HELLOSTAR)}
+                                // onPress={() => navigation.navigate(MainNavigationString.HELLOSTAR)}
                                 >
                                     <Text style={styles.input_title}>Next</Text>
                                 </TouchableOpacity>

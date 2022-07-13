@@ -23,11 +23,9 @@ import LottieView from 'lottie-react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 // create a component
-const PostRejected = ({route}) => {
-  const animation = useRef(null);
-  const {typeName} = route.params;
-  console.log('=======>', typeName);
+const LiveChatAll = ({route}) => {
   const {width} = useWindowDimensions();
+  const animation = useRef(null);
   const windowWidth = Dimensions.get('window').width;
   const Navigation = useNavigation();
 
@@ -53,6 +51,54 @@ const PostRejected = ({route}) => {
                   />
                 </View>
 
+                {/* <View style={{position: 'relative'}}>
+                  <ImageBackground
+                    style={styles.background}
+                    source={imagePath.profilePost}>
+                    <View></View>
+                    <LinearGradient
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                      colors={[
+                        '#FFAD00',
+                        '#FFD273',
+                        '#E19A04',
+                        '#FACF75',
+                        '#E7A725',
+                        '#FFAD00',
+                      ]}
+                      style={styles.linearGradient}>
+                      <View style={styles.learningRow}>
+                        <View style={styles.singleLearningStyle}>
+                          <Image source={imagePath.clock} />
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Day</Text>
+                          <Text style={styles.text}>{leading0(days)}</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Hrs</Text>
+                          <Text style={styles.text}>{leading0(hours)}</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Min</Text>
+                          <Text style={styles.text}>{leading0(minutes)}</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Sec</Text>
+                          <Text style={styles.text}>{leading0(seconds)}</Text>
+                        </View>
+                      </View>
+                    </LinearGradient>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        backgroundColor: '#00000099',
+                      }}></View>
+                  </ImageBackground>
+                </View> */}
+
                 <View style={{marginVertical: 10}}>
                   <Text
                     style={{
@@ -60,7 +106,7 @@ const PostRejected = ({route}) => {
                       fontSize: 20,
                       fontWeight: 'bold',
                     }}>
-                    Shakib {typeName}
+                    Shakib
                   </Text>
                   <Text style={styles.time1}>5:32 July 2022</Text>
                 </View>
@@ -82,25 +128,25 @@ const PostRejected = ({route}) => {
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Approved QA'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Live Chat List'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Completed Greeting'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Pending Greeting'
                     //     ? () =>
@@ -205,7 +251,7 @@ const PostRejected = ({route}) => {
                       fontWeight: 'bold',
                     }}>
                     Shakib
-                    {/* {typeName} */}
+                    {/*  */}
                   </Text>
                   <Text style={styles.time1}>5:32 July 2022</Text>
                 </View>
@@ -227,25 +273,25 @@ const PostRejected = ({route}) => {
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Approved QA'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Live Chat List'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Completed Greeting'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Completed Live'
                     //     ? () =>
@@ -333,7 +379,7 @@ const PostRejected = ({route}) => {
                       fontWeight: 'bold',
                     }}>
                     Shakib
-                    {/* {typeName} */}
+                    {/*  */}
                   </Text>
                   <Text style={styles.time1}>5:32 July 2022</Text>
                 </View>
@@ -355,19 +401,19 @@ const PostRejected = ({route}) => {
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Live Chat List'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Completed Greeting'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Completed Live'
                     //     ? () =>
@@ -955,4 +1001,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default PostRejected;
+export default LiveChatAll;

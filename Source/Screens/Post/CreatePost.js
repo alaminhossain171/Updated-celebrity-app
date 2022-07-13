@@ -1,12 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
 import ImagePicker from 'react-native-image-picker';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
+import styles from './styles';
 
-const PostCreate = () => {
+const CreatePost = () => {
   const [pick, setPick] = React.useState('');
 
   const [freeShow, setFreeShow] = React.useState(false);
@@ -200,109 +201,4 @@ const PostCreate = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-  },
-  createPostRow: {
-    backgroundColor: '#121212',
-    marginTop: 8,
-    marginBottom: 8,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    borderWidth: 1,
-    borderColor: '#fff',
-    borderRadius: 20,
-    padding: 10,
-  },
-  createPostTitleDollar: {
-    marginTop: 8,
-    marginBottom: 8,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    backgroundColor: '#121212',
-    alignItems: 'center',
-    color: 'white',
-    borderWidth: 1,
-    borderColor: '#fff',
-    borderRadius: 20,
-    padding: 10,
-  },
-  createPostDescription: {
-    marginTop: 8,
-    marginBottom: 8,
-    flexDirection: 'row',
-    color: 'white',
-    borderWidth: 1,
-    borderColor: '#fff',
-    borderRadius: 20,
-    backgroundColor: '#121212',
-    padding: 10,
-    minHeight: 80,
-  },
-  uploadFile: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  uploadFileBtn: {
-    flex: 1,
-    marginTop: 8,
-    marginBottom: 8,
-    flexDirection: 'row',
-    color: 'white',
-    borderWidth: 1,
-    backgroundColor: '#121212',
-    borderColor: '#fff',
-    borderRadius: 20,
-    height: 45,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  removeBtn: {
-    backgroundColor: '#F6B718',
-    borderRadius: 20,
-    flex: 1,
-    height: 40,
-    marginTop: 70,
-    marginRight: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  confirmBtn: {
-    flex: 1,
-    backgroundColor: '#39D1B9',
-    borderRadius: 20,
-    marginTop: 70,
-    marginLeft: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 40,
-  },
-  freeBtn: {
-    flex: 1,
-    height: 40,
-    marginTop: 8,
-    marginBottom: 8,
-    borderColor: '#fff',
-    borderWidth: 1,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  freeBtnActive: {
-    flex: 1,
-    height: 40,
-    marginTop: 8,
-    marginBottom: 8,
-    borderColor: '#fff',
-    backgroundColor: 'coral',
-    color: '#ddd',
-    borderWidth: 1,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default PostCreate;
+export default CreatePost;
