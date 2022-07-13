@@ -21,7 +21,7 @@ const Post = () => {
       <ScrollView style={{backgroundColor: '#000', padding: 8}}>
         <View style={styles.container}>
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.POSTALL)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'PostAll'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -42,7 +42,7 @@ const Post = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.POSTAPPROVED)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.REUSEAPPROVED, {typeName: 'PostApproved'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 
@@ -68,7 +68,7 @@ const Post = () => {
           </View>
 
           <View style={styles.superStarHome}>
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.POSTPENDING)}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'PendingPost'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
@@ -89,7 +89,7 @@ const Post = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent}onPress={() => Navigation.navigate(MainNavigationString.POSTREJECTED)}>
+            <TouchableOpacity style={styles.singleContent}onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'RejectedPost'})}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 

@@ -1,89 +1,111 @@
 /* eslint-disable quotes */
 /* eslint-disable no-dupe-keys */
-/* eslint-disable comma-dangle */
+
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable prettier/prettier */
 export default {
+  DASHBORD: 'Dashbord',
+  LOGIN: 'Login',
+  TAB: 'Home',
+  DASHBORD: 'Dashbord',
+  SCHEDULE: 'Schedule',
 
+  // post
+  POST: 'Post',
+  POSTALL: 'PostAll',
+  POSTAPPROVED: 'PostApproved',
+  POSTPENDING: 'PostPending',
+  POSTREJECTED: 'PostRejected',
+  POSTCREATE: 'PostCreate',
 
-    DASHBORD: "Dashbord",
-    LOGIN: "Login",
-    TAB: 'Home',
-    DASHBORD: 'Dashbord',
+  //Livechat
+  LIVECHAT: 'LiveChat',
+  LIVECHATALL: 'LiveChatAll',
+  LIVECHATAPPROVE: 'LiveChatApprove',
+  DASHBORD: 'Dashbord',
+  LOGIN: 'Login',
+  TAB: 'Home',
+  DASHBORD: 'Dashbord',
 
-    // post 
-    POST:'Post',
-    POSTALL:'PostAll',
-    POSTAPPROVED:'PostApproved',
-    POSTPENDING:'PostPending',
-    POSTREJECTED:'PostRejected',
-    POSTCREATE:'PostCreate',
+  //Audition
+  AUDITION: 'Audition',
+  AUDITIONALL: 'AuditionAll',
+  AUDITIONLIVEEVENT: 'AuditionLiveEvents',
+  AUDITIONAPPROVED: 'AuditionApproved',
+  AUDITIONPENDING: 'AuditionPending',
+  AUDITIONCREATE: 'AuditionCreate',
 
-    //Livechat
-    LIVECHAT:'LiveChat',
+  //Star Showcase
+  STARSHOWCASE: 'StarShowcase',
 
-    //Audition
-    AUDITION:'Audition',
-    AUDITIONALL:'AuditionAll',
-    AUDITIONLIVEEVENT:'AuditionLiveEvents',
-    AUDITIONAPPROVED:'AuditionApproved',
-    AUDITIONPENDING:'AuditionPending',
-    AUDITIONCREATE:'AuditionCreate',
+  //Learning
+  LEARNING: 'Learning',
+  LEARNINGALL: 'LearningAll',
 
-    //Star Showcase
-    STARSHOWCASE:'StarShowcase',
+  //Live
+  LIVE: 'Live',
 
+  //Meetup
+  MEETUP: 'MeetUp',
 
-    //Learning
-    LEARNING:'Learning',
-    LEARNINGALL:'LearningAll',
+  //Greeting
+  GREETINGS: 'Greetings',
+  GREETINGSALL: 'GreetingsAll',
+  GREETINGSAPPROVED: 'GreetingsApproved',
+  GREETINGSPENDING: 'GreetingsPending',
+  GREETINGSCOMPLETED: 'GreetingsCompleted',
+  GREETINGSREGISTERED: 'GreetingsRegisteredToUser',
+  GREETINGSFORWARD: 'GreetingsForwardToUser',
+  GREETINGSEVALUATION: 'GreetingsEvaluation',
+  GREETINGSCREATE: 'GreetingsCreate',
 
-    //Live
-    LIVE:'Live',
+  // Qna
+  QNA: 'Qna',
+  QNAALL: 'QNAAll',
+  QNAAPPROVED: 'QNAApproved',
+  QNAPENDING: 'QNAPending',
+  QNACOMPLETED: 'QNACompleted',
+  QNAREJECTED: 'QNARejected',
+  QNACREATE: 'QNACreate',
 
-    //Meetup
-    MEETUP:'MeetUp',
+  //FANGROUP
+  FANGROUP: 'Fangroup',
 
-    //Greeting
-    GREETINGS:'Greetings',
-    GREETINGSALL:'GreetingsAll',
-    GREETINGSAPPROVED:'GreetingsApproved',
-    GREETINGSPENDING:'GreetingsPending',
-    GREETINGSCOMPLETED:'GreetingsCompleted',
-    GREETINGSREGISTERED:'GreetingsRegisteredToUser',
-    GREETINGSFORWARD:'GreetingsForwardToUser',
-    GREETINGSEVALUATION:'GreetingsEvaluation',
-    GREETINGSCREATE:'GreetingsCreate',
+  //Wallet
+  WALLET: 'Wallet',
 
-    // Qna 
-    QNA:'Qna',
-    QNAALL:'QNAAll',
-    QNAAPPROVED:'QNAApproved',
-    QNAPENDING:'QNAPending',
-    QNACOMPLETED:'QNACompleted',
-    QNAREJECTED:'QNARejected',
-    QNACREATE:'QNACreate',
+  //Setting
+  SETTING: 'Setting',
 
-    //FANGROUP
-    FANGROUP:'Fangroup',
-    REJECTED:'Rejected',
-    REJECTEDCARD:'RejectedCard',
-    INVITATION:'Invitation',
-    INVITATIONCARD:'InviationCard',
-    EDITINVITATION:'EditInviation',
-    ACCEPTED:'Accepted',
-    ACCEPTEDCARD:'AcceptedCard',
-    ALLDATAFANGROUP:'AllDataFanGroup',
-    //Wallet
-    WALLET: 'Wallet',  
+  // ReuseCard
+  VIEWCARD: 'ViewCard',
+  VOICECALLLIST: 'VoiceCallList',
+  VOICEMSG: 'VoiceMsg',
+  REUSEAPPROVED: 'ReuseApproved',
+  CREATEFORM: 'CreateForm',
+  EDITCARD: 'EditCard',
+  COMPLETEDCARD: 'CompletedCard',
+  PENDINGCARD: 'PendingCard',
+  //FANGROUP
+  FANGROUP: 'Fangroup',
 
-    //Setting
-    SETTING:'Setting',
+  //Wallet
+  WALLET: 'Wallet',
+  //FANGROUP
+  FANGROUP: 'Fangroup',
+  REJECTED: 'Rejected',
+  REJECTEDCARD: 'RejectedCard',
+  INVITATION: 'Invitation',
+  INVITATIONCARD: 'InviationCard',
+  EDITINVITATION: 'EditInviation',
+  ACCEPTED: 'Accepted',
+  ACCEPTEDCARD: 'AcceptedCard',
+  ALLDATAFANGROUP: 'AllDataFanGroup',
 
-    //Schedule
-    SCHEDULE: 'Schedule',
-    MONTHSCHEDULE: 'MonthSchedule',
+  //Setting
+  SETTING: 'Setting',
 
-
-
-}
+  //Schedule
+  SCHEDULE: 'Schedule',
+  MONTHSCHEDULE: 'MonthSchedule',
+};

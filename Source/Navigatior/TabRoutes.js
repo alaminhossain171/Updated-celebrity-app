@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable prettier/prettier */
 // In App.js in a new project
