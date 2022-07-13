@@ -5,8 +5,8 @@ import imagePath from '../../Constants/imagePath';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 import { useForm, Controller } from "react-hook-form";
-import axios from 'axios';
-import { AuthContext } from '../../Constants/context';
+// import axios from 'axios';
+// import { AuthContext } from '../../Constants/context';
 import LoaderComp from '../../Components/LoaderComp';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Picker } from '@react-native-picker/picker';
@@ -15,14 +15,14 @@ import moment from "moment";
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import AppUrl from '../../RestApi/AppUrl';
+// import AppUrl from '../../RestApi/AppUrl';
 
 
 
 // create a component
 const UserInformation = () => {
     const Navigation = useNavigation();
-    const { axiosConfig, authContext } = useContext(AuthContext);
+    // const { axiosConfig, authContext } = useContext(AuthContext);
     const [buffer, setBuffer] = useState(false)
 
     const [date, setDate] = useState(new Date())
@@ -44,30 +44,30 @@ const UserInformation = () => {
         Navigation.navigate('category')
     }
     //
-    const hendalSubmitInformation = () => {
+    // const hendalSubmitInformation = () => {
 
 
-        setBuffer(true)
-        axios.post(AppUrl.SignUpInforUpdate, updateData, axiosConfig).then(res => {
-            console.log(res.data.userInfo)
-            if (res.data.status == 200) {
-                authContext.userInfoUpate(res.data.userInfo)
-                setBuffer(false)
-                Navigation.navigate('category')
-            }
-            else {
-                ToastAndroid.show(res.data.message, ToastAndroid.SHORT);
-                setBuffer(false)
+    //     setBuffer(true)
+    //     axios.post(AppUrl.SignUpInforUpdate, updateData, axiosConfig).then(res => {
+    //         console.log(res.data.userInfo)
+    //         if (res.data.status == 200) {
+    //             authContext.userInfoUpate(res.data.userInfo)
+    //             setBuffer(false)
+    //             Navigation.navigate('category')
+    //         }
+    //         else {
+    //             ToastAndroid.show(res.data.message, ToastAndroid.SHORT);
+    //             setBuffer(false)
 
-            }
-        })
-            .catch((err) => {
-                console.log(err)
+    //         }
+    //     })
+    //         .catch((err) => {
+    //             console.log(err)
 
-            });
+    //         });
 
 
-    }
+    // }
 
 
     //chose photo 
@@ -109,13 +109,9 @@ const UserInformation = () => {
 
     return (
 
-        <KeyboardAwareScrollView>
-            {buffer ?
-                <LoaderComp />
-                :
-                <></>
-            }
-            <>
+  
+    
+           
                 <ScrollView>
                     <ImageBackground style={styles.container} source={imagePath.background} resizeMode="cover">
 
@@ -386,7 +382,7 @@ const UserInformation = () => {
                                     </Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={styles.login_btn} onPress={hendalSubmitInformation}>
+                                <TouchableOpacity style={styles.login_btn}>
                                     <Text style={styles.input_title}>
                                         UPDATE PROFILE
                                     </Text>
@@ -398,8 +394,8 @@ const UserInformation = () => {
                         </Animatable.View>
                     </ImageBackground>
                 </ScrollView>
-            </>
-        </KeyboardAwareScrollView >
+          
+      
     );
 };
 

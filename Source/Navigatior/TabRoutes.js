@@ -31,7 +31,7 @@ function TabRoutes() {
       
       
       >
-      <Tab.Screen
+      <Tab.Screen  
         name={'DASHBORD'}
         component={DashboardStack}
         options={{
