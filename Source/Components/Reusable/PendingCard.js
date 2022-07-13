@@ -14,12 +14,12 @@ import {
 import DatePicker from 'react-native-date-picker';
 import {TextInput} from 'react-native-gesture-handler';
 import VideoPlayer from 'react-native-video-player';
-import imagePath from '../Constants/imagePath';
+import imagePath from '../../Constants/imagePath';
 import {useNavigation} from '@react-navigation/native';
 import MainNavigationString from '../../Constants/MainNavigationString';
 
 // create a component
-const PendingSchedule = ({route}) => {
+const PendingCard = ({route}) => {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState(new Date(Date.now()));
@@ -181,7 +181,7 @@ const PendingSchedule = ({route}) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                Navigation.navigate(navigationStrings.COMPLETEDQA, {typeName})
+                Navigation.navigate(MainNavigationString.EDITCARD, {typeName})
               }
               style={styles.lastBtn}>
               <View style={styles.lstBtnChildTwo}>
@@ -329,4 +329,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default PendingSchedule;
+export default PendingCard;

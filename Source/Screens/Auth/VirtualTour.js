@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 //import liraries
 
 import React, {useState, useCallback, useRef, Component} from 'react';

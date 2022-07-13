@@ -42,7 +42,7 @@ const Post = () => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.VIEWCARD, {typeName: 'ApprovedPost'})}>
+            <TouchableOpacity style={styles.singleContent} onPress={() => Navigation.navigate(MainNavigationString.POSTAPPROVED)}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}} 

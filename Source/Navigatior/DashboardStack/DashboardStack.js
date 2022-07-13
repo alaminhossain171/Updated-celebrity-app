@@ -45,6 +45,13 @@ import QnaCreate from '../../Screens/QnA/QnaCreate';
 import ApprovedCard from '../../Components/Reusable/ReuseCard';
 import ReuseCard from '../../Components/Reusable/ReuseCard';
 import VoiceCallList from '../../Components/Reusable/VoiceCallList';
+import LiveChatAll from '../../Screens/Live-chat/LiveChatAll';
+import ReuseApproved from '../../Components/Reusable/ReuseApproved';
+import VoiceMsg from '../../Components/Reusable/VoiceMsg';
+import CreateReusableForm from '../../Components/Reusable/CreateReusableForm';
+import CompletedCard from '../../Components/Reusable/CompletedCard';
+import EditCard from '../../Components/Reusable/EditCard';
+import PendingCard from '../../Components/Reusable/PendingCard';
 const StackDashbord = createNativeStackNavigator();
 
 const DashboardStack = () => {
@@ -67,18 +74,18 @@ const DashboardStack = () => {
         name={MainNavigationString.VIEWCARD}
         component={ReuseCard}
       />
-      {/* <StackDashbord.Screen
-        name={MainNavigationString.POSTAPPROVED}
-        component={ReuseCard}
-      />
       <StackDashbord.Screen
+        name={MainNavigationString.POSTAPPROVED}
+        component={PostApproved}
+      />
+      {/* <StackDashbord.Screen
         name={MainNavigationString.POSTPENDING}
         component={ReuseCard}
-      />
+      /> */}
       <StackDashbord.Screen
         name={MainNavigationString.POSTREJECTED}
-        component={ReuseCard}
-      /> */}
+        component={PostRejected}
+      />
       <StackDashbord.Screen
         name={MainNavigationString.POSTCREATE}
         component={PostCreate}
@@ -88,6 +95,11 @@ const DashboardStack = () => {
       <StackDashbord.Screen
         name={MainNavigationString.LIVECHAT}
         component={LiveChat}
+      />
+
+      <StackDashbord.Screen
+        name={MainNavigationString.LIVECHATALL}
+        component={LiveChatAll}
       />
 
       {/*====================== Audition==================  */}
@@ -218,10 +230,34 @@ const DashboardStack = () => {
         component={Setting}
       />
 
-
+      {/*============== Reuse==============  */}
+      <StackDashbord.Screen
+        name={MainNavigationString.REUSEAPPROVED}
+        component={ReuseApproved}
+      />
       <StackDashbord.Screen
         name={MainNavigationString.VOICECALLLIST}
         component={VoiceCallList}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.VOICEMSG}
+        component={VoiceMsg}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.CREATEFORM}
+        component={CreateReusableForm}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.COMPLETEDCARD}
+        component={CompletedCard}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.EDITCARD}
+        component={EditCard}
+      />
+      <StackDashbord.Screen
+        name={MainNavigationString.PENDINGCARD}
+        component={PendingCard}
       />
     </StackDashbord.Navigator>
   );

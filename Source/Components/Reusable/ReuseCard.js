@@ -86,54 +86,7 @@ const ReuseCard = ({route}) => {
                   />
                 </View>
 
-                {/* <View style={{position: 'relative'}}>
-                  <ImageBackground
-                    style={styles.background}
-                    source={imagePath.profilePost}>
-                    <View></View>
-                    <LinearGradient
-                      start={{x: 0, y: 0}}
-                      end={{x: 1, y: 0}}
-                      colors={[
-                        '#FFAD00',
-                        '#FFD273',
-                        '#E19A04',
-                        '#FACF75',
-                        '#E7A725',
-                        '#FFAD00',
-                      ]}
-                      style={styles.linearGradient}>
-                      <View style={styles.learningRow}>
-                        <View style={styles.singleLearningStyle}>
-                          <Image source={imagePath.clock} />
-                        </View>
-                        <View style={styles.singleLearningStyle}>
-                          <Text style={styles.text}>Day</Text>
-                          <Text style={styles.text}>{leading0(days)}</Text>
-                        </View>
-                        <View style={styles.singleLearningStyle}>
-                          <Text style={styles.text}>Hrs</Text>
-                          <Text style={styles.text}>{leading0(hours)}</Text>
-                        </View>
-                        <View style={styles.singleLearningStyle}>
-                          <Text style={styles.text}>Min</Text>
-                          <Text style={styles.text}>{leading0(minutes)}</Text>
-                        </View>
-                        <View style={styles.singleLearningStyle}>
-                          <Text style={styles.text}>Sec</Text>
-                          <Text style={styles.text}>{leading0(seconds)}</Text>
-                        </View>
-                      </View>
-                    </LinearGradient>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'center',
-                        backgroundColor: '#00000099',
-                      }}></View>
-                  </ImageBackground>
-                </View> */}
-
+                
                 <View style={{marginVertical: 10}}>
                   <Text
                     style={{
@@ -158,73 +111,67 @@ const ReuseCard = ({route}) => {
                 <View style={styles.btnView}>
                   <TouchableOpacity
                     style={styles.touchableOpacityBtn}
-                    // onPress={
-                    //   typeName === 'Rejected'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Approved QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Live Chat List'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Pending Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Completed Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'COMPLETESCHEDULE'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : null
-                    // }
+                    onPress={
+                       typeName === 'LiveChatPending'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGCARD,
+                              {typeName},
+                            )
+                        : typeName === 'Live Chat List'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.VOICECALLLIST,
+                              {typeName},
+                            )
+                        : typeName === 'Completed Greeting'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDSCHEDULE,
+                              {typeName},
+                            )
+                        : typeName === 'Pending Greeting'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'Completed Live'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'Pending Live'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'Pending QA'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.PENDINGSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'COMPLETESCHEDULE'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : null
+                    }
                   >
                     <View
                       style={{

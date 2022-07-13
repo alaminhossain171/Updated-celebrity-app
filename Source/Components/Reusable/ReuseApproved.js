@@ -5,7 +5,6 @@
 import {
   Dimensions,
   Image,
-  ImageBackground,
   ScrollView,
   StyleSheet,
   Text,
@@ -15,21 +14,55 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import imagePath from '../../Constants/imagePath';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import MainNavigationString from '../../Constants/MainNavigationString';
 import {useNavigation} from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import LottieView from 'lottie-react-native';
+import {ImageBackground} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import LottieView from 'lottie-react-native';
 
 // create a component
-const PostRejected = ({route}) => {
-  const animation = useRef(null);
+const ReuseApproved = ({route}) => {
   const {typeName} = route.params;
-  console.log('=======>', typeName);
+
   const {width} = useWindowDimensions();
   const windowWidth = Dimensions.get('window').width;
   const Navigation = useNavigation();
+  const animation = useRef(null);
+
+  let deadline = 'august, 06, 2022';
+
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  const leading0 = num => {
+    return num < 10 ? '0' + num : num;
+  };
+
+  const getTimeUntil = deadline => {
+    const time = Date.parse(deadline) - Date.parse(new Date());
+    console.log(time);
+    if (time < 0) {
+      setDays(0);
+      setHours(0);
+      setMinutes(0);
+      setSeconds(0);
+    } else {
+      setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
+      setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
+      setMinutes(Math.floor((time / 1000 / 60) % 60));
+      setSeconds(Math.floor((time / 1000) % 60));
+    }
+  };
+
+  useEffect(() => {
+    setInterval(() => getTimeUntil(deadline), 1000);
+
+    return () => getTimeUntil(deadline);
+  }, [deadline]);
 
   return (
     <>
@@ -43,158 +76,51 @@ const PostRejected = ({route}) => {
               animation="slideInDown">
               <View style={styles.CardContent}>
                 <View style={{position: 'relative'}}>
-                  <Image
-                    style={
-                      windowWidth > 700
-                        ? styles.cardCoverImgWithScreen
-                        : styles.cardCoverImg
-                    }
-                    source={imagePath.profilePost}
-                  />
-                </View>
-
-                <View style={{marginVertical: 10}}>
-                  <Text
-                    style={{
-                      color: '#ddd',
-                      fontSize: 20,
-                      fontWeight: 'bold',
-                    }}>
-                    Shakib {typeName}
-                  </Text>
-                  <Text style={styles.time1}>5:32 July 2022</Text>
-                </View>
-
-                <View>
-                  <Text style={{color: '#ddd'}}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                    repudiandae cum atque quam, cumque sequi aut perferendis
-                    facilis hic at, est, ut voluptatum tenetur! Modi, quis!
-                    Soluta, voluptatum,
-                  </Text>
-                </View>
-
-                <View style={styles.btnView}>
-                  <TouchableOpacity
-                    style={styles.touchableOpacityBtn}
-                    // onPress={
-                    //   typeName === 'Rejected'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Approved QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Live Chat List'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Pending Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Completed Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'COMPLETESCHEDULE'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : null
-                    // }
-                  >
+                  <ImageBackground
+                    style={styles.background}
+                    source={imagePath.profilePost}>
+                    <View></View>
+                    <LinearGradient
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                      colors={[
+                        '#FFAD00',
+                        '#FFD273',
+                        '#E19A04',
+                        '#FACF75',
+                        '#E7A725',
+                        '#FFAD00',
+                      ]}
+                      style={styles.linearGradient}>
+                      <View style={styles.learningRow}>
+                        <View style={styles.singleLearningStyle}>
+                          <Image source={imagePath.clock} />
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Day</Text>
+                          <Text style={styles.text}>{leading0(days)}</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Hrs</Text>
+                          <Text style={styles.text}>{leading0(hours)}</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Min</Text>
+                          <Text style={styles.text}>{leading0(minutes)}</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Sec</Text>
+                          <Text style={styles.text}>{leading0(seconds)}</Text>
+                        </View>
+                      </View>
+                    </LinearGradient>
                     <View
                       style={{
                         flexDirection: 'row',
-                        justifyContent: 'space-around',
-                        alignItems: 'center',
-                        paddingHorizontal: 5,
-                      }}>
-                      {/* <FontAwesome name="eye" size={16} color="#000" /> */}
-                      <LottieView
-                        autoPlay
-                        ref={animation}
-                        style={{
-                          width: 20,
-                          // height: 40,
-                          // backgroundColor: '#ff0',
-                        }}
-                        source={imagePath.view}
-                      />
-                      <Text
-                        style={{
-                          marginHorizontal: 3,
-                          fontWeight: 'bold',
-                          color: '#000',
-                        }}>
-                        View
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-
-                <View />
-              </View>
-            </Animatable.View>
-          </View>
-          <View style={{backgroundColor: '#000', flex: 1}}>
-            <Animatable.View
-              style={
-                windowWidth > 700 ? styles.CardRowWidscreen : styles.CardRow
-              }
-              animation="slideInDown">
-              <View style={styles.CardContent}>
-                <View style={{position: 'relative'}}>
-                  <Image
-                    style={
-                      windowWidth > 700
-                        ? styles.cardCoverImgWithScreen
-                        : styles.cardCoverImg
-                    }
-                    source={imagePath.profilePost}
-                  />
+                        justifyContent: 'center',
+                        backgroundColor: '#00000099',
+                      }}></View>
+                  </ImageBackground>
                 </View>
 
                 <View style={{marginVertical: 10}}>
@@ -202,12 +128,12 @@ const PostRejected = ({route}) => {
                     style={{
                       color: '#ddd',
                       fontSize: 20,
+
                       fontWeight: 'bold',
                     }}>
                     Shakib
-                    {/* {typeName} */}
                   </Text>
-                  <Text style={styles.time1}>5:32 July 2022</Text>
+                  <Text style={{color: '#ff0'}}>5:32PM Feb 2022</Text>
                 </View>
 
                 <View>
@@ -222,58 +148,65 @@ const PostRejected = ({route}) => {
                 <View style={styles.btnView}>
                   <TouchableOpacity
                     style={styles.touchableOpacityBtn}
-                    // onPress={
-                    //   typeName === 'Rejected'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Approved QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Live Chat List'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'COMPLETESCHEDULE'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : null
-                    // }
-                  >
+                    onPress={
+                      typeName === 'LiveChatApprove'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {typeName},
+                            )
+                        : typeName === 'Live Chat List'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.VOICECALLLIST,
+                            )
+                        : typeName === 'Completed Greeting'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDSCHEDULE,
+                            )
+                        : typeName === 'Pending Greeting'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDQA,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'Completed Live'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'Pending Live'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDQA,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'Pending QA'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDQA,
+                              {
+                                typeName,
+                              },
+                            )
+                        : typeName === 'COMPLETESCHEDULE'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDSCHEDULE,
+                              {
+                                typeName,
+                              },
+                            )
+                        : null
+                    }>
                     <View
                       style={{
                         flexDirection: 'row',
@@ -315,14 +248,51 @@ const PostRejected = ({route}) => {
               animation="slideInDown">
               <View style={styles.CardContent}>
                 <View style={{position: 'relative'}}>
-                  <Image
-                    style={
-                      windowWidth > 700
-                        ? styles.cardCoverImgWithScreen
-                        : styles.cardCoverImg
-                    }
-                    source={imagePath.profilePost}
-                  />
+                  <ImageBackground
+                    style={styles.background}
+                    source={imagePath.profilePost}>
+                    <View></View>
+                    <LinearGradient
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                      colors={[
+                        '#FFAD00',
+                        '#FFD273',
+                        '#E19A04',
+                        '#FACF75',
+                        '#E7A725',
+                        '#FFAD00',
+                      ]}
+                      style={styles.linearGradient}>
+                      <View style={styles.learningRow}>
+                        <View style={styles.singleLearningStyle}>
+                          <Image source={imagePath.clock} />
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Day</Text>
+                          <Text style={styles.text}>8</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Hrs</Text>
+                          <Text style={styles.text}>12</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Min</Text>
+                          <Text style={styles.text}>28</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Sec</Text>
+                          <Text style={styles.text}>55</Text>
+                        </View>
+                      </View>
+                    </LinearGradient>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        backgroundColor: '#00000099',
+                      }}></View>
+                  </ImageBackground>
                 </View>
 
                 <View style={{marginVertical: 10}}>
@@ -330,12 +300,12 @@ const PostRejected = ({route}) => {
                     style={{
                       color: '#ddd',
                       fontSize: 20,
+
                       fontWeight: 'bold',
                     }}>
                     Shakib
-                    {/* {typeName} */}
                   </Text>
-                  <Text style={styles.time1}>5:32 July 2022</Text>
+                  <Text style={{color: '#ff0'}}>5:32PM Feb 2022</Text>
                 </View>
 
                 <View>
@@ -355,19 +325,19 @@ const PostRejected = ({route}) => {
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Live Chat List'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Completed Greeting'
                     //     ? () =>
                     //         Navigation.navigate(
                     //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
+                    //           ,
                     //         )
                     //     : typeName === 'Completed Live'
                     //     ? () =>
@@ -379,12 +349,165 @@ const PostRejected = ({route}) => {
                     //         )
                     //     : typeName === 'Pending QA'
                     //     ? () =>
+                    //         Navigation.navigate(MainNavigationString.COMPLETEDQA, {
+                    //           typeName,
+                    //         })
+                    //     : typeName === 'COMPLETESCHEDULE'
+                    //     ? () =>
                     //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
+                    //           MainNavigationString.COMPLETEDSCHEDULE,
                     //           {
                     //             typeName,
                     //           },
                     //         )
+                    //     : null
+                    // }
+                  >
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-around',
+                        alignItems: 'center',
+                        paddingHorizontal: 5,
+                      }}>
+                      <LottieView
+                        autoPlay
+                        ref={animation}
+                        style={{
+                          width: 20,
+                          // height: 40,
+                          // backgroundColor: '#ff0',
+                        }}
+                        source={imagePath.view}
+                      />
+                      <Text
+                        style={{
+                          marginHorizontal: 3,
+                          fontWeight: 'bold',
+                          color: '#000',
+                        }}>
+                        View
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+
+                <View />
+              </View>
+            </Animatable.View>
+          </View>
+          <View style={{backgroundColor: '#000', flex: 1}}>
+            <Animatable.View
+              style={
+                windowWidth > 700 ? styles.CardRowWidscreen : styles.CardRow
+              }
+              animation="slideInDown">
+              <View style={styles.CardContent}>
+                <View style={{position: 'relative'}}>
+                  <ImageBackground
+                    style={styles.background}
+                    source={imagePath.profilePost}>
+                    <View></View>
+                    <LinearGradient
+                      start={{x: 0, y: 0}}
+                      end={{x: 1, y: 0}}
+                      colors={[
+                        '#FFAD00',
+                        '#FFD273',
+                        '#E19A04',
+                        '#FACF75',
+                        '#E7A725',
+                        '#FFAD00',
+                      ]}
+                      style={styles.linearGradient}>
+                      <View style={styles.learningRow}>
+                        <View style={styles.singleLearningStyle}>
+                          <Image source={imagePath.clock} />
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Day</Text>
+                          <Text style={styles.text}>8</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Hrs</Text>
+                          <Text style={styles.text}>12</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Min</Text>
+                          <Text style={styles.text}>28</Text>
+                        </View>
+                        <View style={styles.singleLearningStyle}>
+                          <Text style={styles.text}>Sec</Text>
+                          <Text style={styles.text}>55</Text>
+                        </View>
+                      </View>
+                    </LinearGradient>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        backgroundColor: '#00000099',
+                      }}></View>
+                  </ImageBackground>
+                </View>
+
+                <View style={{marginVertical: 10}}>
+                  <Text
+                    style={{
+                      color: '#ddd',
+                      fontSize: 20,
+
+                      fontWeight: 'bold',
+                    }}>
+                    Shakib
+                  </Text>
+                  <Text style={{color: '#ff0'}}>5:32PM Feb 2022</Text>
+                </View>
+
+                <View>
+                  <Text style={{color: '#ddd'}}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                    repudiandae cum atque quam, cumque sequi aut perferendis
+                    facilis hic at, est, ut voluptatum tenetur! Modi, quis!
+                    Soluta, voluptatum,
+                  </Text>
+                </View>
+
+                <View style={styles.btnView}>
+                  <TouchableOpacity
+                    style={styles.touchableOpacityBtn}
+                    // onPress={
+                    //   typeName === 'Approved QA'
+                    //     ? () =>
+                    //         Navigation.navigate(
+                    //           MainNavigationString.VOICECALLLIST,
+                    //           ,
+                    //         )
+                    //     : typeName === 'Live Chat List'
+                    //     ? () =>
+                    //         Navigation.navigate(
+                    //           MainNavigationString.VOICECALLLIST,
+                    //           ,
+                    //         )
+                    //     : typeName === 'Completed Greeting'
+                    //     ? () =>
+                    //         Navigation.navigate(
+                    //           MainNavigationString.COMPLETEDSCHEDULE,
+                    //           ,
+                    //         )
+                    //     : typeName === 'Completed Live'
+                    //     ? () =>
+                    //         Navigation.navigate(
+                    //           MainNavigationString.COMPLETEDSCHEDULE,
+                    //           {
+                    //             typeName,
+                    //           },
+                    //         )
+                    //     : typeName === 'Pending QA'
+                    //     ? () =>
+                    //         Navigation.navigate(MainNavigationString.COMPLETEDQA, {
+                    //           typeName,
+                    //         })
                     //     : typeName === 'COMPLETESCHEDULE'
                     //     ? () =>
                     //         Navigation.navigate(
@@ -765,6 +888,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'white',
   },
+  starCardImg: {
+    paddingTop: 15,
+    width: 40,
+    height: 40,
+    borderRadius: 100,
+    borderWidth: 0.2,
+    borderColor: 'white',
+  },
 
   mainMeetUpViewA: {
     flexDirection: 'row',
@@ -835,6 +966,10 @@ const styles = StyleSheet.create({
   learningRow: {
     flexDirection: 'row',
     padding: 4,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
   },
   roundOneText: {
     textAlign: 'center',
@@ -947,12 +1082,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     position: 'relative',
   },
-  time1: {
-    color: '#ffad00',
-    fontSize: 13,
-    fontWeight: 'bold',
-  },
 });
 
 //make this component available to the app
-export default PostRejected;
+export default ReuseApproved;

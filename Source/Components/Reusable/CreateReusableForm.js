@@ -19,7 +19,7 @@ import DatePicker from 'react-native-date-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 // create a component
-const CreateReusable = () => {
+const CreateReusableForm = () => {
   const [count, setCount] = useState(0);
 
   const [pick, setPick] = React.useState('');
@@ -561,4 +561,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default CreateReusable;
+export default CreateReusableForm;

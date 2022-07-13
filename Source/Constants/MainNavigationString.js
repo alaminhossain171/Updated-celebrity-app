@@ -20,6 +20,8 @@ export default {
 
   //Livechat
   LIVECHAT: 'LiveChat',
+  LIVECHATALL: 'LiveChatAll',
+  LIVECHATAPPROVE: 'LiveChatApprove',
 
   //Audition
   AUDITION: 'Audition',
@@ -75,4 +77,9 @@ export default {
   VIEWCARD: 'ViewCard',
   VOICECALLLIST: 'VoiceCallList',
   VOICEMSG: 'VoiceMsg',
+  REUSEAPPROVED: 'ReuseApproved',
+  CREATEFORM: 'CreateForm',
+  EDITCARD: 'EditCard',
+  COMPLETEDCARD: 'CompletedCard',
+  PENDINGCARD: 'PendingCard',
 };
