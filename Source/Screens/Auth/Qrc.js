@@ -19,7 +19,7 @@ import { useNavigation } from '@react-navigation/native';
 // import LoaderComp from '../../Components/LoaderComp';
 // import axios from 'axios';
 import AppUrl from '../../RestApi/AppUrl';
-// import navigationStrings from '../../Constants/navigationStrings';
+// import MainNavigationString from '../../Constants/MainNavigationString';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import { RNCamera } from 'react-native-camera';

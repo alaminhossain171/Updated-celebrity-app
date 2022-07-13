@@ -11,7 +11,7 @@ import LoaderComp from '../../Components/LoaderComp';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
-// import navigationStrings from '../../Constants/navigationStrings';
+// import MainNavigationString from '../../Constants/MainNavigationString';
 
 
 // create a component
@@ -41,7 +41,7 @@ const SignUp = ({ route }) => {
     //             setBuffer(false)
     //             if (res.data.status === 200) {
     //                 // authContext.signIn(res.data.token)
-    //                 // navigation.navigate(navigationStrings.OTP, {
+    //                 // navigation.navigate(MainNavigationString.OTP, {
     //                 //     phone: data.phone
     //                 // })
     //             }
@@ -256,7 +256,7 @@ const SignUp = ({ route }) => {
                                     <View style={styles.Login_btn_container}>
                                         <TouchableOpacity style={styles.login_btn}
                                             // onPress={handleSubmit(onSubmit)}
-                                        //  onPress={() => navigation.navigate(navigationStrings.OTP)}
+                                        //  onPress={() => navigation.navigate(MainNavigationString.OTP)}
                                         >
                                             <Text style={styles.input_title}>
                                                 Next
