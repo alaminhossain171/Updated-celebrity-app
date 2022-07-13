@@ -96,6 +96,8 @@ export default {
   ImgBanner: require('../Assets/LearningSession/image_22.png'),
   ImgPro: require('../Assets/LearningSession/01d2lodv.png'),
   ImgTime: require('../Assets/Icons/clock.png'),
+  ImgTime1: require('../Assets/clock1.png'),
+
 
   //modal images
   congratulation: require('../Assets/modals/congratulation.png'),
