@@ -265,6 +265,14 @@ const ReuseCard = ({route}) => {
                                 typeName,
                               },
                             )
+                        : typeName === 'AuditionAll'
+                        ? () =>
+                            Navigation.navigate(
+                              MainNavigationString.COMPLETEDCARD,
+                              {
+                                typeName,
+                              },
+                            )
                         : typeName === 'LearningResult'
                         ? () =>
                             Navigation.navigate(
