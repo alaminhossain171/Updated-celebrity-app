@@ -26,7 +26,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const ReuseCard = ({route}) => {
   const animation = useRef(null);
   const {typeName} = route.params;
-  console.log('=======>', typeName);
+
   const {width} = useWindowDimensions();
   const windowWidth = Dimensions.get('window').width;
   const Navigation = useNavigation();
