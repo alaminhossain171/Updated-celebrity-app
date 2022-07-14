@@ -15,19 +15,19 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import imagePath from '../../Constants/imagePath';
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import MainNavigationString from '../../Constants/MainNavigationString';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import LottieView from 'lottie-react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 // create a component
-const ReuseCard = ({route}) => {
+const ReuseCard = ({ route }) => {
   const animation = useRef(null);
-  const {typeName} = route.params;
+  const { typeName } = route.params;
 
-  const {width} = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const windowWidth = Dimensions.get('window').width;
   const Navigation = useNavigation();
 
@@ -68,14 +68,14 @@ const ReuseCard = ({route}) => {
     <>
       <View style={styles.container}>
         <ScrollView>
-          <View style={{backgroundColor: '#000', flex: 1}}>
+          <View style={{ backgroundColor: '#000', flex: 1 }}>
             <Animatable.View
               style={
                 windowWidth > 700 ? styles.CardRowWidscreen : styles.CardRow
               }
               animation="slideInDown">
               <View style={styles.CardContent}>
-                <View style={{position: 'relative'}}>
+                <View style={{ position: 'relative' }}>
                   <Image
                     style={
                       windowWidth > 700
@@ -86,7 +86,7 @@ const ReuseCard = ({route}) => {
                   />
                 </View>
 
-                <View style={{marginVertical: 10}}>
+                <View style={{ marginVertical: 10 }}>
                   <Text
                     style={{
                       color: '#ddd',
@@ -99,7 +99,7 @@ const ReuseCard = ({route}) => {
                 </View>
 
                 <View>
-                  <Text style={{color: '#ddd'}}>
+                  <Text style={{ color: '#ddd' }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
                     repudiandae cum atque quam, cumque sequi aut perferendis
                     facilis hic at, est, ut voluptatum tenetur! Modi, quis!
@@ -113,207 +113,207 @@ const ReuseCard = ({route}) => {
                     onPress={
                       typeName === 'LiveChatPending'
                         ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGCARD,
-                              {typeName},
-                            )
+                          Navigation.navigate(
+                            MainNavigationString.PENDINGCARD,
+                            { typeName },
+                          )
                         : typeName === 'LiveChatAll'
-                        ? () =>
+                          ? () =>
                             Navigation.navigate(
                               MainNavigationString.COMPLETEDCARD,
-                              {typeName},
+                              { typeName },
                             )
-                        : typeName === 'LiveChatRejected'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {typeName},
-                            )
-                        : typeName === 'LiveChatCompleted'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LiveChatResult'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LiveChatList'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.VOICECALLLIST,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'AuditionLiveEvents'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'AuditionPending'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'MeetupDashboard'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'MeetupApproved'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.REUSEAPPROVED,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'MeetupPending'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'MeetupRejected'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'MeetupCompleted'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'QACompleted'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'QAPending'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'QADashboard'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LearningDashboard'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LearningPending'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LearningRejected'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LearningCompleted'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'AuditionAll'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LearningResult'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'LearningEvaluation'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'RejectedPost'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'PendingPost'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.PENDINGCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : typeName === 'PostAll'
-                        ? () =>
-                            Navigation.navigate(
-                              MainNavigationString.COMPLETEDCARD,
-                              {
-                                typeName,
-                              },
-                            )
-                        : null
+                          : typeName === 'LiveChatRejected'
+                            ? () =>
+                              Navigation.navigate(
+                                MainNavigationString.COMPLETEDCARD,
+                                { typeName },
+                              )
+                            : typeName === 'LiveChatCompleted'
+                              ? () =>
+                                Navigation.navigate(
+                                  MainNavigationString.COMPLETEDCARD,
+                                  {
+                                    typeName,
+                                  },
+                                )
+                              : typeName === 'LiveChatResult'
+                                ? () =>
+                                  Navigation.navigate(
+                                    MainNavigationString.COMPLETEDCARD,
+                                    {
+                                      typeName,
+                                    },
+                                  )
+                                : typeName === 'LiveChatList'
+                                  ? () =>
+                                    Navigation.navigate(
+                                      MainNavigationString.VOICECALLLIST,
+                                      {
+                                        typeName,
+                                      },
+                                    )
+                                  : typeName === 'AuditionLiveEvents'
+                                    ? () =>
+                                      Navigation.navigate(
+                                        MainNavigationString.COMPLETEDCARD,
+                                        {
+                                          typeName,
+                                        },
+                                      )
+                                    : typeName === 'AuditionPending'
+                                      ? () =>
+                                        Navigation.navigate(
+                                          MainNavigationString.PENDINGCARD,
+                                          {
+                                            typeName,
+                                          },
+                                        )
+                                      : typeName === 'MeetupDashboard'
+                                        ? () =>
+                                          Navigation.navigate(
+                                            MainNavigationString.COMPLETEDCARD,
+                                            {
+                                              typeName,
+                                            },
+                                          )
+                                        : typeName === 'MeetupApproved'
+                                          ? () =>
+                                            Navigation.navigate(
+                                              MainNavigationString.REUSEAPPROVED,
+                                              {
+                                                typeName,
+                                              },
+                                            )
+                                          : typeName === 'MeetupPending'
+                                            ? () =>
+                                              Navigation.navigate(
+                                                MainNavigationString.PENDINGCARD,
+                                                {
+                                                  typeName,
+                                                },
+                                              )
+                                            : typeName === 'MeetupRejected'
+                                              ? () =>
+                                                Navigation.navigate(
+                                                  MainNavigationString.COMPLETEDCARD,
+                                                  {
+                                                    typeName,
+                                                  },
+                                                )
+                                              : typeName === 'MeetupCompleted'
+                                                ? () =>
+                                                  Navigation.navigate(
+                                                    MainNavigationString.COMPLETEDCARD,
+                                                    {
+                                                      typeName,
+                                                    },
+                                                  )
+                                                : typeName === 'QACompleted'
+                                                  ? () =>
+                                                    Navigation.navigate(
+                                                      MainNavigationString.COMPLETEDCARD,
+                                                      {
+                                                        typeName,
+                                                      },
+                                                    )
+                                                  : typeName === 'QAPending'
+                                                    ? () =>
+                                                      Navigation.navigate(
+                                                        MainNavigationString.PENDINGCARD,
+                                                        {
+                                                          typeName,
+                                                        },
+                                                      )
+                                                    : typeName === 'QADashboard'
+                                                      ? () =>
+                                                        Navigation.navigate(
+                                                          MainNavigationString.COMPLETEDCARD,
+                                                          {
+                                                            typeName,
+                                                          },
+                                                        )
+                                                      : typeName === 'LearningDashboard'
+                                                        ? () =>
+                                                          Navigation.navigate(
+                                                            MainNavigationString.COMPLETEDCARD,
+                                                            {
+                                                              typeName,
+                                                            },
+                                                          )
+                                                        : typeName === 'LearningPending'
+                                                          ? () =>
+                                                            Navigation.navigate(
+                                                              MainNavigationString.PENDINGCARD,
+                                                              {
+                                                                typeName,
+                                                              },
+                                                            )
+                                                          : typeName === 'LearningRejected'
+                                                            ? () =>
+                                                              Navigation.navigate(
+                                                                MainNavigationString.COMPLETEDCARD,
+                                                                {
+                                                                  typeName,
+                                                                },
+                                                              )
+                                                            : typeName === 'LearningCompleted'
+                                                              ? () =>
+                                                                Navigation.navigate(
+                                                                  MainNavigationString.COMPLETEDCARD,
+                                                                  {
+                                                                    typeName,
+                                                                  },
+                                                                )
+                                                              : typeName === 'AuditionAll'
+                                                                ? () =>
+                                                                  Navigation.navigate(
+                                                                    MainNavigationString.COMPLETEDCARD,
+                                                                    {
+                                                                      typeName,
+                                                                    },
+                                                                  )
+                                                                : typeName === 'LearningResult'
+                                                                  ? () =>
+                                                                    Navigation.navigate(
+                                                                      MainNavigationString.COMPLETEDCARD,
+                                                                      {
+                                                                        typeName,
+                                                                      },
+                                                                    )
+                                                                  : typeName === 'LearningEvaluation'
+                                                                    ? () =>
+                                                                      Navigation.navigate(
+                                                                        MainNavigationString.COMPLETEDCARD,
+                                                                        {
+                                                                          typeName,
+                                                                        },
+                                                                      )
+                                                                    : typeName === 'RejectedPost'
+                                                                      ? () =>
+                                                                        Navigation.navigate(
+                                                                          MainNavigationString.COMPLETEDCARD,
+                                                                          {
+                                                                            typeName,
+                                                                          },
+                                                                        )
+                                                                      : typeName === 'PendingPost'
+                                                                        ? () =>
+                                                                          Navigation.navigate(
+                                                                            MainNavigationString.PENDINGCARD,
+                                                                            {
+                                                                              typeName,
+                                                                            },
+                                                                          )
+                                                                        : typeName === 'PostAll'
+                                                                          ? () =>
+                                                                            Navigation.navigate(
+                                                                              MainNavigationString.COMPLETEDCARD,
+                                                                              {
+                                                                                typeName,
+                                                                              },
+                                                                            )
+                                                                          : null
                     }>
                     <View
                       style={{
@@ -323,7 +323,7 @@ const ReuseCard = ({route}) => {
                         paddingHorizontal: 5,
                       }}>
                       {/* <FontAwesome name="eye" size={16} color="#000" /> */}
-                      <LottieView
+                      {/* <LottieView
                         autoPlay
                         ref={animation}
                         style={{
@@ -332,15 +332,23 @@ const ReuseCard = ({route}) => {
                           // backgroundColor: '#ff0',
                         }}
                         source={imagePath.view}
-                      />
-                      <Text
-                        style={{
-                          marginHorizontal: 3,
-                          fontWeight: 'bold',
-                          color: '#000',
-                        }}>
-                        View
-                      </Text>
+                      /> */}
+
+
+                      <View style={{ justifyContent: 'center', alignItems: 'center', width: '80%' }}>
+                        <Text
+                          style={{
+                            marginHorizontal: 3,
+
+                            color: 'black',
+                          }}>
+                          View
+                        </Text>
+                      </View>
+                      <View style={{ justifyContent: 'center', alignItems: 'center', width: '20%' }}>
+                        <Icon name='arrow-forward-ios' color={'black'} size={15} />
+                      </View>
+
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -349,14 +357,14 @@ const ReuseCard = ({route}) => {
               </View>
             </Animatable.View>
           </View>
-          <View style={{backgroundColor: '#000', flex: 1}}>
+          <View style={{ backgroundColor: '#000', flex: 1 }}>
             <Animatable.View
               style={
                 windowWidth > 700 ? styles.CardRowWidscreen : styles.CardRow
               }
               animation="slideInDown">
               <View style={styles.CardContent}>
-                <View style={{position: 'relative'}}>
+                <View style={{ position: 'relative' }}>
                   <Image
                     style={
                       windowWidth > 700
@@ -367,7 +375,7 @@ const ReuseCard = ({route}) => {
                   />
                 </View>
 
-                <View style={{marginVertical: 10}}>
+                <View style={{ marginVertical: 10 }}>
                   <Text
                     style={{
                       color: '#ddd',
@@ -381,7 +389,7 @@ const ReuseCard = ({route}) => {
                 </View>
 
                 <View>
-                  <Text style={{color: '#ddd'}}>
+                  <Text style={{ color: '#ddd' }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
                     repudiandae cum atque quam, cumque sequi aut perferendis
                     facilis hic at, est, ut voluptatum tenetur! Modi, quis!
@@ -392,57 +400,57 @@ const ReuseCard = ({route}) => {
                 <View style={styles.btnView}>
                   <TouchableOpacity
                     style={styles.touchableOpacityBtn}
-                    // onPress={
-                    //   typeName === 'Rejected'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Approved QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Live Chat List'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'COMPLETESCHEDULE'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : null
-                    // }
+                  // onPress={
+                  //   typeName === 'Rejected'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.COMPLETEDSCHEDULE,
+                  //           {typeName},
+                  //         )
+                  //     : typeName === 'Approved QA'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.VOICECALLLIST,
+                  //           {typeName},
+                  //         )
+                  //     : typeName === 'Live Chat List'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.VOICECALLLIST,
+                  //           {typeName},
+                  //         )
+                  //     : typeName === 'Completed Greeting'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.COMPLETEDSCHEDULE,
+                  //           {typeName},
+                  //         )
+                  //     : typeName === 'Completed Live'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.COMPLETEDSCHEDULE,
+                  //           {
+                  //             typeName,
+                  //           },
+                  //         )
+                  //     : typeName === 'Pending QA'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.PENDINGSCHEDULE,
+                  //           {
+                  //             typeName,
+                  //           },
+                  //         )
+                  //     : typeName === 'COMPLETESCHEDULE'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.COMPLETEDSCHEDULE,
+                  //           {
+                  //             typeName,
+                  //           },
+                  //         )
+                  //     : null
+                  // }
                   >
                     <View
                       style={{
@@ -451,24 +459,19 @@ const ReuseCard = ({route}) => {
                         alignItems: 'center',
                         paddingHorizontal: 5,
                       }}>
-                      <LottieView
-                        autoPlay
-                        ref={animation}
-                        style={{
-                          width: 20,
-                          // height: 40,
-                          // backgroundColor: '#ff0',
-                        }}
-                        source={imagePath.view}
-                      />
-                      <Text
-                        style={{
-                          marginHorizontal: 3,
-                          fontWeight: 'bold',
-                          color: '#000',
-                        }}>
-                        View
-                      </Text>
+                          <View style={{ justifyContent: 'center', alignItems: 'center', width: '80%' }}>
+                        <Text
+                          style={{
+                            marginHorizontal: 3,
+
+                            color: 'black',
+                          }}>
+                          View
+                        </Text>
+                      </View>
+                      <View style={{ justifyContent: 'center', alignItems: 'center', width: '20%' }}>
+                        <Icon name='arrow-forward-ios' color={'black'} size={15} />
+                      </View>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -477,14 +480,14 @@ const ReuseCard = ({route}) => {
               </View>
             </Animatable.View>
           </View>
-          <View style={{backgroundColor: '#000', flex: 1}}>
+          <View style={{ backgroundColor: '#000', flex: 1 }}>
             <Animatable.View
               style={
                 windowWidth > 700 ? styles.CardRowWidscreen : styles.CardRow
               }
               animation="slideInDown">
               <View style={styles.CardContent}>
-                <View style={{position: 'relative'}}>
+                <View style={{ position: 'relative' }}>
                   <Image
                     style={
                       windowWidth > 700
@@ -495,7 +498,7 @@ const ReuseCard = ({route}) => {
                   />
                 </View>
 
-                <View style={{marginVertical: 10}}>
+                <View style={{ marginVertical: 10 }}>
                   <Text
                     style={{
                       color: '#ddd',
@@ -509,7 +512,7 @@ const ReuseCard = ({route}) => {
                 </View>
 
                 <View>
-                  <Text style={{color: '#ddd'}}>
+                  <Text style={{ color: '#ddd' }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
                     repudiandae cum atque quam, cumque sequi aut perferendis
                     facilis hic at, est, ut voluptatum tenetur! Modi, quis!
@@ -520,51 +523,51 @@ const ReuseCard = ({route}) => {
                 <View style={styles.btnView}>
                   <TouchableOpacity
                     style={styles.touchableOpacityBtn}
-                    // onPress={
-                    //   typeName === 'Approved QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Live Chat List'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.VOICECALLLIST,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Greeting'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {typeName},
-                    //         )
-                    //     : typeName === 'Completed Live'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'Pending QA'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.PENDINGSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : typeName === 'COMPLETESCHEDULE'
-                    //     ? () =>
-                    //         Navigation.navigate(
-                    //           MainNavigationString.COMPLETEDSCHEDULE,
-                    //           {
-                    //             typeName,
-                    //           },
-                    //         )
-                    //     : null
-                    // }
+                  // onPress={
+                  //   typeName === 'Approved QA'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.VOICECALLLIST,
+                  //           {typeName},
+                  //         )
+                  //     : typeName === 'Live Chat List'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.VOICECALLLIST,
+                  //           {typeName},
+                  //         )
+                  //     : typeName === 'Completed Greeting'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.COMPLETEDSCHEDULE,
+                  //           {typeName},
+                  //         )
+                  //     : typeName === 'Completed Live'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.COMPLETEDSCHEDULE,
+                  //           {
+                  //             typeName,
+                  //           },
+                  //         )
+                  //     : typeName === 'Pending QA'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.PENDINGSCHEDULE,
+                  //           {
+                  //             typeName,
+                  //           },
+                  //         )
+                  //     : typeName === 'COMPLETESCHEDULE'
+                  //     ? () =>
+                  //         Navigation.navigate(
+                  //           MainNavigationString.COMPLETEDSCHEDULE,
+                  //           {
+                  //             typeName,
+                  //           },
+                  //         )
+                  //     : null
+                  // }
                   >
                     <View
                       style={{
@@ -573,24 +576,19 @@ const ReuseCard = ({route}) => {
                         alignItems: 'center',
                         paddingHorizontal: 5,
                       }}>
-                      <LottieView
-                        autoPlay
-                        ref={animation}
-                        style={{
-                          width: 20,
-                          // height: 40,
-                          // backgroundColor: '#ff0',
-                        }}
-                        source={imagePath.view}
-                      />
-                      <Text
-                        style={{
-                          marginHorizontal: 3,
-                          fontWeight: 'bold',
-                          color: '#000',
-                        }}>
-                        View
-                      </Text>
+                          <View style={{ justifyContent: 'center', alignItems: 'center', width: '80%' }}>
+                        <Text
+                          style={{
+                            marginHorizontal: 3,
+
+                            color: 'black',
+                          }}>
+                          View
+                        </Text>
+                      </View>
+                      <View style={{ justifyContent: 'center', alignItems: 'center', width: '20%' }}>
+                        <Icon name='arrow-forward-ios' color={'black'} size={15} />
+                      </View>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -968,7 +966,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   touchableOpacityBtn: {
-    backgroundColor: '#00ffff',
+    backgroundColor: '#ffaa00',
     padding: 10,
     marginVertical: 10,
     borderRadius: 10,

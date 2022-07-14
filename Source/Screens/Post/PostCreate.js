@@ -56,32 +56,32 @@ const PostCreate = () => {
 
   return (
     <View style={styles.container}>
-      <View style={{padding: 12}}>
+      <View style={{padding: 12,margin:15,backgroundColor:'#181819',borderRadius:20}}>
         <View style={styles.createPostRow}>
           <View />
-          <Text style={{color: '#fff'}}>Post Type</Text>
+          <Text style={{color: '#9e9e9e'}}>Post Type</Text>
           <TouchableOpacity onPress={() => setFreeShow(!freeShow)}>
             <AntDesign
               name={freeShow ? 'caretdown' : 'caretright'}
-              color={'#fff'}
-              size={22}
+              color={'#ffad00'}
+              size={15}
             />
           </TouchableOpacity>
         </View>
 
         {freeShow && (
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row',justifyContent:'space-between'}}>
             <TouchableOpacity
               onPress={() => setPaidShow(false)}
               style={!paidShow ? styles.freeBtnActive : styles.freeBtn}>
-              <Text style={!paidShow ? {color: '#ddd'} : {color: '#fff'}}>
+              <Text style={!paidShow ? {color: '#9e9e9e'} : {color: '#9e9e9e'}}>
                 Free
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => setPaidShow(true)}
               style={paidShow ? styles.freeBtnActive : styles.freeBtn}>
-              <Text style={{color: '#fff'}}>Paid</Text>
+              <Text style={{color: '#9e9e9e'}}>Paid</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -92,7 +92,7 @@ const PostCreate = () => {
               <TextInput
                 style={styles.createPostRow}
                 placeholder="Post Title"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#9e9e9e'}
               />
             </View>
             <View>
@@ -100,7 +100,7 @@ const PostCreate = () => {
                 style={styles.createPostDescription}
                 multiline={true}
                 placeholder="Post Description"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#9e9e9e'}
               />
             </View>
 
@@ -108,13 +108,13 @@ const PostCreate = () => {
               <TouchableOpacity
                 style={styles.uploadFileBtn}
                 onPress={openDocumentFile}>
-                <Entypo name="video-camera" color={'#fff'} size={22} />
+                <Entypo name="video-camera" color={'#ffaa00'} size={15} />
                 {fileShow ? (
-                  <Text style={{color: '#fff', paddingLeft: 8}}>
+                  <Text style={{color: '#9e9e9e', paddingLeft: 8}}>
                     {fileShow}
                   </Text>
                 ) : (
-                  <Text style={{color: '#fff', paddingLeft: 8}}>
+                  <Text style={{color: '#9e9e9e', paddingLeft: 8}}>
                     Upload File
                   </Text>
                 )}
@@ -122,11 +122,11 @@ const PostCreate = () => {
               <TouchableOpacity
                 style={styles.uploadFileBtn}
                 onPress={openPicker}>
-                <Entypo name="image" color={'#fff'} size={22} />
+                <Entypo name="image" color={'#ffaa00'} size={15} />
                 {pick ? (
                   <Image style={{height: 300, width: 300}} source={pick} />
                 ) : (
-                  <Text style={{color: '#fff', paddingLeft: 8}}>
+                  <Text style={{color: '#9e9e9e', paddingLeft: 8}}>
                     Upload Image
                   </Text>
                 )}
@@ -135,10 +135,10 @@ const PostCreate = () => {
 
             <View style={{flexDirection: 'row'}}>
               <TouchableOpacity style={styles.removeBtn}>
-                <Text style={{fontWeight: 'bold', fontSize: 20}}>Remove</Text>
+                <Text style={{ fontSize: 13,color:'white'}}>REMOVE</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.confirmBtn}>
-                <Text style={{fontWeight: 'bold', fontSize: 20}}>Confirm</Text>
+                <Text style={{ fontSize: 13,color:'white'}}>CONFIRM</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -148,14 +148,14 @@ const PostCreate = () => {
               <TextInput
                 style={styles.createPostTitleDollar}
                 placeholder="$12"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#9e9e9e'}
               />
             </View>
             <View>
               <TextInput
                 style={styles.createPostRow}
                 placeholder="Post Title"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#9e9e9e'}
               />
             </View>
             <View>
@@ -164,7 +164,7 @@ const PostCreate = () => {
                 multiline={true}
                 // textAlignVertical='top'sdaf
                 placeholder="Post Description"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#9e9e9e'}
               />
             </View>
 
@@ -172,25 +172,25 @@ const PostCreate = () => {
               <TouchableOpacity
                 style={styles.uploadFileBtn}
                 onPress={openDocumentFile}>
-                <Entypo name="video-camera" color={'#fff'} size={22} />
-                <Text style={{color: '#fff', paddingLeft: 8}}>Upload File</Text>
+                <Entypo name="video-camera" color={'#9e9e9e'} size={22} />
+                <Text style={{color: '#9e9e9e', paddingLeft: 8}}>Upload File</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.uploadFileBtn}
                 onPress={openPicker}>
-                <Entypo name="image" color={'#fff'} size={22} />
-                <Text style={{color: '#fff', paddingLeft: 8}}>
+                <Entypo name="image" color={'#9e9e9e'} size={22} />
+                <Text style={{color: '#9e9e9e', paddingLeft: 8}}>
                   Upload Image
                 </Text>
               </TouchableOpacity>
             </View>
 
-            <View style={{flexDirection: 'row'}}>
+            <View style={{flexDirection: 'row',justifyContent:'space-between'}}>
               <TouchableOpacity style={styles.removeBtn}>
-                <Text style={{fontWeight: 'bold', fontSize: 20}}>Remove</Text>
+                <Text style={{ fontSize: 13}}>Remove</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.confirmBtn}>
-                <Text style={{fontWeight: 'bold', fontSize: 20}}>Confirm</Text>
+                <Text style={{ fontSize: 13}}>Confirm</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -211,8 +211,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    borderWidth: 1,
-    borderColor: '#fff',
+    borderWidth: 0.5,
+    borderColor: '#ffad00',
     borderRadius: 20,
     padding: 10,
   },
@@ -224,8 +224,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#121212',
     alignItems: 'center',
     color: 'white',
-    borderWidth: 1,
-    borderColor: '#fff',
+    borderWidth: 0.5,
+    borderColor: '#ffaa00',
     borderRadius: 20,
     padding: 10,
   },
@@ -234,71 +234,72 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     flexDirection: 'row',
     color: 'white',
-    borderWidth: 1,
-    borderColor: '#fff',
+    borderWidth: 0.5,
+    borderColor: '#ffaa00',
     borderRadius: 20,
     backgroundColor: '#121212',
     padding: 10,
     minHeight: 80,
   },
   uploadFile: {
-    flex: 1,
+   
     flexDirection: 'row',
+    justifyContent:'space-between'
   },
   uploadFileBtn: {
-    flex: 1,
+width:'47%',
     marginTop: 8,
     marginBottom: 8,
     flexDirection: 'row',
     color: 'white',
-    borderWidth: 1,
+    borderWidth: 0.5,
     backgroundColor: '#121212',
-    borderColor: '#fff',
+    borderColor: '#ffaa00',
     borderRadius: 20,
     height: 45,
     justifyContent: 'center',
     alignItems: 'center',
   },
   removeBtn: {
-    backgroundColor: '#F6B718',
+    backgroundColor: '#2A2B2E',
     borderRadius: 20,
-    flex: 1,
+width:'47%',
     height: 40,
-    marginTop: 70,
+    marginTop: 30,
     marginRight: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
   confirmBtn: {
-    flex: 1,
-    backgroundColor: '#39D1B9',
+  width:'47%',
+    backgroundColor: '#1D90F4',
     borderRadius: 20,
-    marginTop: 70,
+    marginTop: 30,
     marginLeft: 10,
     justifyContent: 'center',
     alignItems: 'center',
     height: 40,
   },
   freeBtn: {
-    flex: 1,
+    width:'47%',
     height: 40,
     marginTop: 8,
     marginBottom: 8,
-    borderColor: '#fff',
-    borderWidth: 1,
+    borderColor: '#ffaa00',
+    borderWidth: 0.5,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
   freeBtnActive: {
-    flex: 1,
+    width:'47%',
     height: 40,
     marginTop: 8,
     marginBottom: 8,
-    borderColor: '#fff',
-    backgroundColor: 'coral',
+    borderColor: '#ffad00',
+    backgroundColor: '#2A2B2E',
     color: '#ddd',
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',

@@ -109,9 +109,9 @@ const CreateReusableForm = () => {
             <Text style={{color: '#fff'}}>Learning Session Title</Text>
           </View> */}
           <View>
-            {/* <View>
-              <Text style={styles.title}>SESSION TITLE</Text>
-            </View> */}
+            <View>
+              <Text style={styles.title}>Title</Text>
+            </View>
             <TextInput
               style={styles.createMeetupRow}
               placeholder="Session Tittle"
@@ -121,9 +121,9 @@ const CreateReusableForm = () => {
           </View>
 
           <View style={{ marginVertical: 8 }}>
-            {/* <View>
-              <Text style={styles.title}>SESSION DESCRIPTION</Text>
-            </View> */}
+            <View>
+              <Text style={styles.title}>Discription</Text>
+            </View>
             <TextInput
               style={styles.createPostDescription}
               multiline={true}
@@ -132,9 +132,9 @@ const CreateReusableForm = () => {
             />
           </View>
 
-          {/* <View>
-            <Text style={styles.title}>FILE & IMAGE UPLOAD</Text>
-          </View> */}
+          <View>
+            <Text style={styles.title}>File & Image upload</Text>
+          </View>
 
           <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
@@ -151,9 +151,9 @@ const CreateReusableForm = () => {
           </View>
 
           <View style={{ marginVertical: 8 }}>
-            {/* <View>
+            <View>
               <Text style={styles.title}>Date</Text>
-            </View> */}
+            </View>
 
             <TouchableOpacity
               onPress={() => setOpen(true)}
@@ -322,8 +322,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
 
     marginBottom: 6,
-    textAlign: 'center',
-    color:'#ffaa00'
+    // textAlign: 'center',
+    color:'#C9B049'
   },
   textInput: {
     borderWidth: 0.7,
