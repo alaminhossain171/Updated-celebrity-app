@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import React from 'react';
 import TabRoutes from './TabRoutes';
 import AuthNavigationString from '../Constants/AuthNavigationString';
@@ -17,8 +17,12 @@ import Login from './../Screens/Auth/Login';
 const AuthStack = Stack => {
   return (
     <>
-      <Stack.Screen name={AuthNavigationString.LOGIN} component={Login} />
+      <Stack.Screen
+        name={AuthNavigationString.STARAUTH}
+        component={CelebrityAuth}
+      />
       <Stack.Screen name={AuthNavigationString.FLASH} component={Flash} />
+      <Stack.Screen name={AuthNavigationString.LOGIN} component={Login} />
       <Stack.Screen name={AuthNavigationString.QRC} component={Qrc} />
       <Stack.Screen
         name={AuthNavigationString.USERINFORMATION}
@@ -34,10 +38,7 @@ const AuthStack = Stack => {
 
       {/* <Stack.Screen name={AuthNavigationString.CONGRATULATION} component={Congratulations} /> */}
 
-      <Stack.Screen
-        name={AuthNavigationString.STARAUTH}
-        component={CelebrityAuth}
-      />
+
     </>
   );
 };

@@ -27,6 +27,8 @@ target 'Superstarapp' do
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+
   target 'SuperstarappTests' do
     inherit! :complete
     # Pods for testing

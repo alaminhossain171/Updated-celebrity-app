@@ -17,12 +17,14 @@ import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 // import { AuthContext } from '../../Constants/context';
 // import LoaderComp from '../../Components/LoaderComp';
-// import axios from 'axios';
-import AppUrl from '../../RestApi/AppUrl';
+import axios from 'axios';
+
 // import MainNavigationString from '../../Constants/MainNavigationString';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import { RNCamera } from 'react-native-camera';
+import AppUrl from '../../Constants/AppUrl';
+import AuthNavigationString from '../../Constants/AuthNavigationString';
 // create a component
 const Qrc = () => {
     const navigation = useNavigation();
@@ -37,58 +39,41 @@ const Qrc = () => {
     const qrcodeRef = useRef(null);
     const [link, setLink] = useState('');
 
-    const handleLink = () => {
-        Linking.openURL(link).catch(() => {
-            console.log('Houve um erro');
+    const HandelQrcVerfify = (otp) => {
+        setBuffer(true);
+        const data = {
+            qr_code: otp,
+        }
+
+
+
+        axios.post(AppUrl.QrVerification, data).then(res => {
+            setBuffer(false);
+            console.log(res)
+            if (res.data.status === 200) {
+                ToastAndroid.show(
+                    res.data.message,
+                    ToastAndroid.SHORT,
+                );
+                navigation.navigate(AuthNavigationString.SIGNUP, {
+                    authId: res.data.star_id
+                })
+            } else {
+                ToastAndroid.show(
+                    res.data.message,
+                    ToastAndroid.SHORT,
+                );
+            }
+        }).catch(err => {
+            ToastAndroid.show(
+                'Network Problem, Check you Internet',
+                ToastAndroid.SHORT,
+            );
+            setBuffer(false);
+            console.log(err);
         });
 
-        qrcodeRef.current.reactivate();
     };
-    // const HandelLogin = () => {
-    //     setBuffer(true);
-
-    //     if (email != null || pass != null) {
-    //         const data = {
-    //             email: email,
-    //             password: pass,
-    //         };
-
-    //         axios
-    //             .post(AppUrl.UserLogin, data)
-    //             .then(res => {
-    //                 //console.log(res.data)
-    //                 if (res.data.status === 200) {
-    //                     if (res.data.user.otp_verified_at) {
-    //                         setBuffer(false);
-    //                         authContext.signIn(res.data.token, res.data.user);
-    //                     } else {
-    //                         authContext.signUp(res.data.token, res.data.user);
-    //                         navigation.navigate('Otp', {
-    //                             phone: res.data.user.phone,
-    //                             user: {
-    //                                 token: res.data.token,
-    //                                 information: res.data.user,
-    //                             },
-    //                         });
-    //                     }
-    //                 } else {
-    //                     setBuffer(false);
-    //                     setError('user and password not match !!');
-    //                 }
-    //             })
-    //             .catch(err => {
-    //                 ToastAndroid.show(
-    //                     'Network Problem, Check you Internet',
-    //                     ToastAndroid.SHORT,
-    //                 );
-    //                 setBuffer(false);
-    //                 console.log(err);
-    //             });
-    //     } else {
-    //         setError('All field required !!');
-    //         setBuffer(false);
-    //     }
-    // };
 
     return (
         <>
@@ -99,8 +84,8 @@ const Qrc = () => {
                 />
 
                 <View style={styles.header}>
-                    <Animatable.Image animation="pulse" iterationCount="infinite" 
-                    source={imagePath.logo}
+                    <Animatable.Image animation="pulse" iterationCount="infinite"
+                        source={imagePath.logo}
                         style={{ height: 150, width: 150, marginBottom: 140 }} />
                 </View>
 
@@ -119,16 +104,16 @@ const Qrc = () => {
                                 width: 100,
                                 height: 120,
                                 alignSelf: 'center',
-                            }} 
+                            }}
                                 cameraStyle={{ width: 200, height: 100, alignSelf: 'center' }} ref={qrcodeRef}
-                                onRead={({ data }) => setLink(data)}
+                                onRead={({ data }) => HandelQrcVerfify(data)}
                                 flasMode={RNCamera.Constants.FlashMode.off}
                             />
                         </View>
 
                         {/* button */}
 
-                        <View style={styles.Login_btn_container}>
+                        {/* <View style={styles.Login_btn_container}>
                             <TouchableOpacity style={styles.SCAn_btn} 
                             >
                                 <Text style={styles.Scan_title}>
@@ -136,7 +121,7 @@ const Qrc = () => {
                                     Scan QR code
                                 </Text>
                             </TouchableOpacity>
-                        </View>
+                        </View> */}
                     </View>
                 </Animatable.View>
             </ImageBackground>

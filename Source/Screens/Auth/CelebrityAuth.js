@@ -5,6 +5,7 @@ import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity, ImageBackg
 import imagePath from '../../Constants/imagePath';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
+import AuthNavigationString from '../../Constants/AuthNavigationString';
 
 // create a component
 const CelebrityAuth = () => {
@@ -32,13 +33,13 @@ const CelebrityAuth = () => {
 
                     <View style={styles.Auth_btn_container}>
 
-                        <TouchableOpacity style={styles.AuthBtn}>
+                        <TouchableOpacity style={styles.AuthBtn} onPress={() => navigation.navigate(AuthNavigationString.QRC)}>
                             <Text style={styles.AuthTitle}>
                                 Register
                             </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.AuthBtn}>
+                        <TouchableOpacity style={styles.AuthBtn} onPress={() => navigation.navigate(AuthNavigationString.LOGIN)}>
                             <Text style={styles.AuthTitle}>
                                 Log in
                             </Text>
