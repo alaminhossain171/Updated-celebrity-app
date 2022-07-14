@@ -5,12 +5,15 @@ import imagePath from '../../Constants/imagePath';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 import { useForm, Controller } from "react-hook-form";
-// import axios from 'axios';
+import axios from 'axios';
 // import { AuthContext } from '../../Constants/context';
 import LoaderComp from '../../Components/LoaderComp';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
+import AppUrl from '../../Constants/AppUrl';
+import AuthNavigationString from '../../Constants/AuthNavigationString';
+import { AuthContext } from '../../Constants/context';
 // import MainNavigationString from '../../Constants/MainNavigationString';
 
 
@@ -20,63 +23,63 @@ const SignUp = ({ route }) => {
     const { control, handleSubmit, formState: { errors } } = useForm();
     const windowWidth = Dimensions.get('window').width;
     const [showPass, setShowPass] = useState(true)
-    // const { authContext } = useContext(AuthContext);
+    const { authContext } = useContext(AuthContext);
     const [buffer, setBuffer] = useState(false)
     const [serverError, setServerError] = useState({});
     const screen = Dimensions.get("screen");
     const [notmatched, setnotmatched] = useState(false)
-    // const { authId } = route.params
+    const { authId } = route.params
     // let baseUrl = 'https://backend.hellosuperstars.com/api/'
 
-    // const onSubmit = (data) => {
-    //     setBuffer(true)
-    //     if (data.password === data.cpassword) {
-    //         const formData = {
-    //             id: authId,
-    //             email: data.email,
-    //             phone: data.phone,
-    //             password: data.password,
-    //         }
-    //         axios.post(`http://backend.hellosuperstars.com/api/superStar/register`, formData).then(res => {
-    //             setBuffer(false)
-    //             if (res.data.status === 200) {
-    //                 // authContext.signIn(res.data.token)
-    //                 // navigation.navigate(MainNavigationString.OTP, {
-    //                 //     phone: data.phone
-    //                 // })
-    //             }
-    //             else {
-    //                 setServerError(res.data.validation_errors)
+    const onSubmit = (data) => {
+        setBuffer(true)
+        if (data.password === data.cpassword) {
+            const formData = {
+                id: authId,
+                email: data.email,
+                phone: data.phone,
+                password: data.password,
+            }
+            axios.post(`http://backend.hellosuperstars.com/api/superStar/register`, formData).then(res => {
+                setBuffer(false)
+                if (res.data.status === 200) {
+                    authContext.signIn(res.data.token)
+                    navigation.navigate(AuthNavigationString.OTP, {
+                        phone: data.phone
+                    })
+                }
+                else {
+                    setServerError(res.data.validation_errors)
 
-    //             }
-    //         })
-    //             .catch((err) => {
-    //                 console.log(err)
-    //                 setBuffer(false)
-    //                 // navigation.navigate('Otp', {
-    //                 //     phone: data.phone
-    //                 // })
-    //             });
+                }
+            })
+                .catch((err) => {
+                    console.log(err)
+                    setBuffer(false)
+                    // navigation.navigate('Otp', {
+                    //     phone: data.phone
+                    // })
+                });
 
-    //     } else {
-    //         setBuffer(false)
-    //         setnotmatched(true)
-    //     }
-
-
+        } else {
+            setBuffer(false)
+            setnotmatched(true)
+        }
 
 
 
-    // }
+
+
+    }
 
     return (
         <KeyboardAwareScrollView>
             <>
-                {/* {buffer ?
+                {buffer ?
                     <LoaderComp />
                     :
                     <></>
-                } */}
+                }
                 <ScrollView>
                     <ImageBackground style={windowWidth > 600 ? styles.containerWideScreen : styles.container} source={imagePath.background} resizeMode="cover">
                         <Image source={imagePath.Top} style={windowWidth > 600 ? styles.containerTop : styles.Top} />
@@ -159,8 +162,8 @@ const SignUp = ({ route }) => {
                                         />
 
                                     </View>
-                                    {/* {errors.phone && <Text style={{ color: 'red', marginLeft: 25 }}>{errors.phone?.type === 'pattern' ? "provide valid phone number" : "This field is required !"}</Text>} */}
-                                    {/* {serverError?.phone && <Text style={{ color: 'red', marginLeft: 25, marginTop: 10 }}>{serverError?.phone}</Text>} */}
+                                    {errors.phone && <Text style={{ color: 'red', marginLeft: 25 }}>{errors.phone?.type === 'pattern' ? "provide valid phone number" : "This field is required !"}</Text>}
+                                    {serverError?.phone && <Text style={{ color: 'red', marginLeft: 25, marginTop: 10 }}>{serverError?.phone}</Text>}
 
                                     {/* password input  */}
                                     <View style={styles.input}>
@@ -204,7 +207,7 @@ const SignUp = ({ route }) => {
 
 
                                     </View>
-                                    {/* {errors.password && <Text style={{ color: 'red', marginLeft: 25 }}>This field is required {errors.password.message}</Text>} */}
+                                    {errors.password && <Text style={{ color: 'red', marginLeft: 25 }}>This field is required {errors.password.message}</Text>}
                                     <View style={styles.input}>
                                         <Icon name="lock" color={'#D4AF37'} size={20} style={styles.Icon} />
                                         <Controller
@@ -237,26 +240,26 @@ const SignUp = ({ route }) => {
                                             name="cpassword"
                                         />
                                         {/* <TouchableOpacity style={styles.password}
-                                            onPress={() => setShowPass(!showPass)}
-                                        >
-                                            {showPass ?
-                                                <Entypo name='eye-with-line' size={20} color={'#D4AF37'} />
-                                                :
-                                                <Entypo name='eye' size={20} color={'#D4AF37'} />
-                                            }
-                                        </TouchableOpacity> */}
+            onPress={() => setShowPass(!showPass)}
+        >
+            {showPass ?
+                <Entypo name='eye-with-line' size={20} color={'#D4AF37'} />
+                :
+                <Entypo name='eye' size={20} color={'#D4AF37'} />
+            }
+        </TouchableOpacity> */}
 
 
                                     </View>
-                                    {/* {notmatched && <Text style={{ color: 'red', marginLeft: 25 }}>Password not matched</Text>} */}
-                                    {/* {errors.cpassword && <Text style={{ color: 'red', marginLeft: 25 }}>This field is required {errors.cpassword.message}</Text>} */}
+                                    {notmatched && <Text style={{ color: 'red', marginLeft: 25 }}>Password not matched</Text>}
+                                    {errors.cpassword && <Text style={{ color: 'red', marginLeft: 25 }}>This field is required {errors.cpassword.message}</Text>}
 
 
                                     {/* button */}
                                     <View style={styles.Login_btn_container}>
                                         <TouchableOpacity style={styles.login_btn}
-                                            // onPress={handleSubmit(onSubmit)}
-                                        //  onPress={() => navigation.navigate(MainNavigationString.OTP)}
+                                            onPress={handleSubmit(onSubmit)}
+                                        //  onPress={() => navigation.navigate(navigationStrings.OTP)}
                                         >
                                             <Text style={styles.input_title}>
                                                 Next

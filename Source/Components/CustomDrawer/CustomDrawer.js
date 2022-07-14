@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -11,13 +11,16 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import {View, Text, Image} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { View, Text, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import MainNavigationString from '../../Constants/MainNavigationString';
+import { AuthContext } from '../../Constants/context';
+
 function CustomDrawer(props) {
   const Navigation = useNavigation();
+  const { authContext } = useContext(AuthContext);
   return (
-    <DrawerContentScrollView style={{backgroundColor: 'black'}} {...props}>
+    <DrawerContentScrollView style={{ backgroundColor: 'black' }} {...props}>
       {/* <DrawerItemList {...props} /> */}
       <View
         style={{
@@ -25,7 +28,7 @@ function CustomDrawer(props) {
           justifyContent: 'center',
           bottom: 6,
         }}>
-        <View style={{marginLeft: 10, paddingVertical: 20}}>
+        <View style={{ marginLeft: 10, paddingVertical: 20 }}>
           <Image
             source={{
               uri: `https://api.bdcrictime.com/players/348.png`,
@@ -38,11 +41,11 @@ function CustomDrawer(props) {
               borderColor: 'gold',
             }}
           />
-          <Text style={{color: 'white', fontSize: 18, marginVertical: 3}}>
-          Shakib Al Hasan
+          <Text style={{ color: 'white', fontSize: 18, marginVertical: 3 }}>
+            Shakib Al Hasan
           </Text>
-          <Text style={{color: 'gray', fontSize: 10}}>Shakib@gmail.com</Text>
-          <Text style={{color: 'gold', fontSize: 14, marginVertical: 1}}>
+          <Text style={{ color: 'gray', fontSize: 10 }}>Shakib@gmail.com</Text>
+          <Text style={{ color: 'gold', fontSize: 14, marginVertical: 1 }}>
             Superstar
           </Text>
         </View>
@@ -50,32 +53,32 @@ function CustomDrawer(props) {
       <DrawerItem
         label="Schedule"
         icon={() => <Icon name="calendar-o" size={20} color="gold" />}
-        labelStyle={{color: '#f2f2f2', borderColor: '#a8a8a8'}}
+        labelStyle={{ color: '#f2f2f2', borderColor: '#a8a8a8' }}
         onPress={() => Navigation.navigate(MainNavigationString.SCHEDULE)}
-        style={{borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10}}
+        style={{ borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10 }}
       />
       <DrawerItem
         label="Wallet"
         icon={() => <Entypo name="wallet" size={20} color="gold" />}
-        labelStyle={{color: '#f2f2f2'}}
+        labelStyle={{ color: '#f2f2f2' }}
         onPress={() => Navigation.navigate(MainNavigationString.WALLET)}
-        style={{borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10}}
+        style={{ borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10 }}
       />
       <DrawerItem
         label="Setting"
         icon={() => (
           <Ionicons name="ios-settings-sharp" size={20} color="gold" />
         )}
-        labelStyle={{color: '#f2f2f2'}}
+        labelStyle={{ color: '#f2f2f2' }}
         onPress={() => Navigation.navigate(MainNavigationString.SETTING)}
-        style={{borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10}}
+        style={{ borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10 }}
       />
       <DrawerItem
         label="Logout"
         icon={() => <Entypo name="log-out" size={20} color="gold" />}
-        labelStyle={{color: '#f2f2f2'}}
-        onPress={() => alert('hello3')}
-        style={{borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10}}
+        labelStyle={{ color: '#f2f2f2' }}
+        onPress={() => authContext.signOut()}
+        style={{ borderColor: '#2e2d2d', borderBottomWidth: 2, borderRadius: 10 }}
       />
     </DrawerContentScrollView>
   );
