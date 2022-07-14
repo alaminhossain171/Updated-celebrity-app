@@ -21,7 +21,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {ImageBackground} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import LottieView from 'lottie-react-native';
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 // create a component
 const ReuseApproved = ({route}) => {
   let {typeName} = route.params;
@@ -239,24 +239,19 @@ const ReuseApproved = ({route}) => {
                         alignItems: 'center',
                         paddingHorizontal: 5,
                       }}>
-                      <LottieView
-                        autoPlay
-                        ref={animation}
-                        style={{
-                          width: 20,
-                          // height: 40,
-                          // backgroundColor: '#ff0',
-                        }}
-                        source={imagePath.view}
-                      />
-                      <Text
-                        style={{
-                          marginHorizontal: 3,
-                          fontWeight: 'bold',
-                          color: '#000',
-                        }}>
-                        View
-                      </Text>
+                        <View style={{ justifyContent: 'center', alignItems: 'center', width: '80%' }}>
+                        <Text
+                          style={{
+                            marginHorizontal: 3,
+
+                            color: 'black',
+                          }}>
+                          View
+                        </Text>
+                      </View>
+                      <View style={{ justifyContent: 'center', alignItems: 'center', width: '20%' }}>
+                        <Icon name='arrow-forward-ios' color={'black'} size={15} />
+                      </View>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -330,7 +325,7 @@ const ReuseApproved = ({route}) => {
                     }}>
                     Shakib
                   </Text>
-                  <Text style={{color: '#ff0'}}>5:32PM Feb 2022</Text>
+                  <Text style={{color: '#ffaa00'}}>5:32PM Feb 2022</Text>
                 </View>
 
                 <View>
@@ -395,24 +390,19 @@ const ReuseApproved = ({route}) => {
                         alignItems: 'center',
                         paddingHorizontal: 5,
                       }}>
-                      <LottieView
-                        autoPlay
-                        ref={animation}
-                        style={{
-                          width: 20,
-                          // height: 40,
-                          // backgroundColor: '#ff0',
-                        }}
-                        source={imagePath.view}
-                      />
-                      <Text
-                        style={{
-                          marginHorizontal: 3,
-                          fontWeight: 'bold',
-                          color: '#000',
-                        }}>
-                        View
-                      </Text>
+                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '80%' }}>
+                        <Text
+                          style={{
+                            marginHorizontal: 3,
+
+                            color: 'black',
+                          }}>
+                          View
+                        </Text>
+                      </View>
+                      <View style={{ justifyContent: 'center', alignItems: 'center', width: '20%' }}>
+                        <Icon name='arrow-forward-ios' color={'black'} size={15} />
+                      </View>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -486,7 +476,7 @@ const ReuseApproved = ({route}) => {
                     }}>
                     Shakib
                   </Text>
-                  <Text style={{color: '#ff0'}}>5:32PM Feb 2022</Text>
+                  <Text style={{color: '#ffaa00'}}>5:32PM Feb 2022</Text>
                 </View>
 
                 <View>
@@ -551,24 +541,19 @@ const ReuseApproved = ({route}) => {
                         alignItems: 'center',
                         paddingHorizontal: 5,
                       }}>
-                      <LottieView
-                        autoPlay
-                        ref={animation}
-                        style={{
-                          width: 20,
-                          // height: 40,
-                          // backgroundColor: '#ff0',
-                        }}
-                        source={imagePath.view}
-                      />
-                      <Text
-                        style={{
-                          marginHorizontal: 3,
-                          fontWeight: 'bold',
-                          color: '#000',
-                        }}>
-                        View
-                      </Text>
+                        <View style={{ justifyContent: 'center', alignItems: 'center', width: '80%' }}>
+                        <Text
+                          style={{
+                            marginHorizontal: 3,
+
+                            color: 'black',
+                          }}>
+                          View
+                        </Text>
+                      </View>
+                      <View style={{ justifyContent: 'center', alignItems: 'center', width: '20%' }}>
+                        <Icon name='arrow-forward-ios' color={'black'} size={15} />
+                      </View>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -952,9 +937,10 @@ const styles = StyleSheet.create({
   btnView: {
     flexDirection: 'row',
     justifyContent: 'center',
+
   },
   touchableOpacityBtn: {
-    backgroundColor: '#00ffff',
+    backgroundColor: '#ffaa00',
     padding: 10,
     marginVertical: 10,
     borderRadius: 10,

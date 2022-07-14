@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 //import liraries
-import React, {Component, useState} from 'react';
+import React, { Component, useState } from 'react';
 import {
   View,
   Text,
@@ -17,7 +17,7 @@ import ImagePicker from 'react-native-image-picker';
 import DocumentPicker from 'react-native-document-picker';
 import DatePicker from 'react-native-date-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
-
+import LinearGradient from 'react-native-linear-gradient';
 
 // create a component
 const CreateReusableForm = () => {
@@ -91,7 +91,7 @@ const CreateReusableForm = () => {
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
       } else {
-        const source = {uri: response.uri};
+        const source = { uri: response.uri };
         console.log(source);
         setPick(source);
 
@@ -104,52 +104,53 @@ const CreateReusableForm = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.containerChild}>
-        <View style={{padding: 12}}>
+        <View style={{ padding: 12 }}>
           {/* <View style={styles.createPostRow}>
             <Text style={{color: '#fff'}}>Learning Session Title</Text>
           </View> */}
           <View>
             <View>
-              <Text style={styles.title}>Session Title</Text>
+              <Text style={styles.title}>Title</Text>
             </View>
             <TextInput
               style={styles.createMeetupRow}
-              placeholder="Enter Title"
-              placeholderTextColor="gray"
+              placeholder="Session Tittle"
+              placeholderTextColor="#9e9e9e"
+
             />
           </View>
 
-          <View style={{marginVertical: 8}}>
+          <View style={{ marginVertical: 8 }}>
             <View>
-              <Text style={styles.title}>Session Description</Text>
+              <Text style={styles.title}>Discription</Text>
             </View>
             <TextInput
               style={styles.createPostDescription}
               multiline={true}
               placeholder="Write Description"
-              placeholderTextColor={'gray'}
+              placeholderTextColor={'#9e9e9e'}
             />
           </View>
 
           <View>
-            <Text style={styles.title}>File and Image Upload</Text>
+            <Text style={styles.title}>File & Image upload</Text>
           </View>
 
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
               style={styles.uploadFileBtn}
               onPress={openDocumentFile}>
               {/* <Entypo name="video-camera" color={'#fff'} size={22} /> */}
-              <FontAwesome5 name="file-export" color={'#ddd'} size={22} />
-              <Text style={{color: 'gray', paddingLeft: 8}}>Upload File</Text>
+              <FontAwesome5 name="file-export" color={'#ffaa00'} size={15} />
+              <Text style={{ color: '#9e9e9e', paddingLeft: 8, fontSize: 13 }}>Upload File</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.uploadFileBtn} onPress={openPicker}>
-              <Entypo name="video-camera" color={'#ddd'} size={22} />
-              <Text style={{color: 'gray', paddingLeft: 8}}>Upload Image</Text>
+              <Entypo name="video-camera"  color={'#ffaa00'} size={15} />
+              <Text style={{ color: '#9e9e9e', paddingLeft: 8, fontSize: 13 }}>Upload Image</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={{marginVertical: 8}}>
+          <View style={{ marginVertical: 8 }}>
             <View>
               <Text style={styles.title}>Date</Text>
             </View>
@@ -157,11 +158,11 @@ const CreateReusableForm = () => {
             <TouchableOpacity
               onPress={() => setOpen(true)}
               style={styles.createMeetupRow}>
-              <Text style={{color: '#fff', marginHorizontal: 4}}>
+              <Text style={{ color: '#9e9e9e', marginHorizontal: 4, fontSize: 13 }}>
                 26-05-2022
               </Text>
               <View>
-                <MaterialIcons name="date-range" color={'#fff'} size={22} />
+                <MaterialIcons name="date-range"  color={'#ffaa00'} size={15} />
               </View>
             </TouchableOpacity>
           </View>
@@ -179,23 +180,23 @@ const CreateReusableForm = () => {
             }}
           />
 
-          <View style={{flexDirection: 'row', marginVertical: 8}}>
-            <View style={{flex: 1}}>
+          <View style={{ flexDirection: 'row', marginVertical: 8 }}>
+            <View style={{ flex: 1 }}>
               <Text style={styles.title}>Start Time</Text>
               <TouchableOpacity
                 style={styles.uploadFileBtn}
                 onPress={showTimePicker}>
-                <Text style={{color: '#fff', paddingRight: 8}}>5.25PM</Text>
-                <AntDesign name="clockcircleo" color={'#fff'} size={22} />
+                <Text style={{ color: '#9e9e9e', paddingRight: 8, fontSize: 13 }}>5.25PM</Text>
+                <AntDesign name="clockcircleo"  color={'#ffaa00'} size={15} />
               </TouchableOpacity>
             </View>
-            <View style={{flex: 1}}>
+            <View style={{ flex: 1 }}>
               <Text style={styles.title}>End Time</Text>
               <TouchableOpacity
                 style={styles.uploadFileBtn}
                 onPress={showTimePicker}>
-                <Text style={{color: '#fff', paddingRight: 8}}>5.25PM</Text>
-                <AntDesign name="clockcircleo" color={'#fff'} size={22} />
+                <Text style={{ color: '#9e9e9e', paddingRight: 8, fontSize: 13 }}>8.25PM</Text>
+                <AntDesign name="clockcircleo"  color={'#ffaa00'} size={15} />
               </TouchableOpacity>
             </View>
           </View>
@@ -210,48 +211,48 @@ const CreateReusableForm = () => {
             />
           )}
 
-          <View style={{marginVertical: 8}}>
-            <Text style={styles.title}>Fee per Minute (TK)</Text>
+          <View style={{ marginVertical: 8 }}>
+            {/* <Text style={styles.title}>Fee per Minute (TK)</Text> */}
 
             <View>
               <TextInput
-                placeholder="500"
-                placeholderTextColor={'gray'}
+                placeholder="Fee Per min-500"
+                placeholderTextColor={'#9e9e9e'}
                 style={styles.textInput}
                 keyboardType="number-pad"
               />
             </View>
           </View>
 
-          <View style={{marginVertical: 8}}>
-            <Text style={styles.title}>Time Interval (MIN)</Text>
+          <View style={{ marginVertical: 8 }}>
+            {/* <Text style={styles.title}>Time Interval (MIN)</Text> */}
             <TextInput
-              placeholder="5"
-              placeholderTextColor={'gray'}
+              placeholder="Time Interval min-5"
+              placeholderTextColor={'#9e9e9e'}
               style={styles.textInput}
               keyboardType="number-pad"
             />
           </View>
 
-          <View style={{marginVertical: 8}}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flex: 1}}>
-                <Text style={styles.title}>Maximum Time (MIN)</Text>
+          <View style={{ marginVertical: 8 }}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.title}>Max Time </Text>
               </View>
-              <View style={{flex: 1}}>
-                <Text style={styles.title}>Minimum Time (MIN)</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.title}>Min Time</Text>
               </View>
             </View>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
               <TextInput
-                placeholder="5"
-                placeholderTextColor={'gray'}
+                placeholder="5 min"
+                placeholderTextColor={'#9e9e9e'}
                 style={styles.textInputMax}
                 keyboardType="number-pad"
               />
               <TextInput
-                placeholder="5"
-                placeholderTextColor={'gray'}
+                placeholder="3 min"
+                placeholderTextColor={'#9e9e9e'}
                 style={styles.textInputMax}
                 keyboardType="number-pad"
               />
@@ -292,15 +293,20 @@ const CreateReusableForm = () => {
             </View>
           </View>
 
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity style={styles.removeBtn}>
-              <Text style={{fontWeight: 'bold', fontSize: 20}}>Clear</Text>
+              <Text style={{ fontSize: 13, color: 'white' }}>CLEAR</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.confirmBtn}>
-              <Text style={{fontWeight: 'bold', fontSize: 20, color: '#fff'}}>
-                Confirm
-              </Text>
-            </TouchableOpacity>
+
+            <LinearGradient colors={[ '#E19A04','#E7A725','#FFAD55','#FACF55',]} style={styles.confirmBtn}>
+              <TouchableOpacity >
+                <Text style={{ fontSize: 13, color: 'white', }}>
+                  CONFIRM
+                </Text>
+              </TouchableOpacity>
+            </LinearGradient>
+
+
           </View>
         </View>
       </View>
@@ -311,39 +317,43 @@ const CreateReusableForm = () => {
 // define your styles
 const styles = StyleSheet.create({
   title: {
-    color: '#fff',
+    color: '#9e9e9e',
     marginHorizontal: 8,
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 13,
+
+    marginBottom: 6,
+    // textAlign: 'center',
+    color:'#C9B049'
   },
   textInput: {
-    borderWidth: 1,
-    borderRadius: 8,
+    borderWidth: 0.7,
+    borderRadius: 23,
     marginVertical: 7,
-    borderColor: '#fff',
+    borderColor: '#ffad00',
     textAlign: 'center',
     color: '#fff',
-    backgroundColor: '#1b1b1b',
+    backgroundColor: '#181818',
+
   },
   textInputMax: {
     flex: 1,
     marginHorizontal: 8,
-    borderWidth: 1,
-    borderRadius: 8,
+    borderWidth: 0.7,
+    borderRadius: 23,
     marginVertical: 7,
-    borderColor: '#fff',
+    borderColor: '#ffad00',
     textAlign: 'center',
     color: '#fff',
-    backgroundColor: '#1b1b1b',
+    backgroundColor: '#181818',
   },
   container: {
     flex: 1,
     backgroundColor: '#000',
   },
   containerChild: {
-    // backgroundColor: '#343434',
-    margin: 10,
-    borderRadius: 10,
+    backgroundColor: '#181819',
+    margin: 15,
+    borderRadius: 20,
   },
   createPostRow: {
     marginTop: 8,
@@ -351,10 +361,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
 
     borderWidth: 1,
-    borderColor: '#fff',
+    borderColor: '#ffad00',
     borderRadius: 20,
     padding: 10,
-    backgroundColor: '#121212',
+    backgroundColor: '#181818',
   },
   createPostRowMain: {
     // flex: 1,
@@ -363,7 +373,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: '#fff',
+    borderColor: '#ffad00',
     borderRadius: 20,
     padding: 10,
   },
@@ -373,9 +383,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: '#fff',
+    borderColor: '#ffad00',
     borderRadius: 20,
-    backgroundColor: '#121212',
+    backgroundColor: '#181818',
     padding: 10,
   },
   createMeetupRow: {
@@ -383,11 +393,14 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     flexDirection: 'row',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: '#fff',
-    borderRadius: 8,
-    backgroundColor: '#121212',
+    borderWidth: 0.7,
+    borderColor: '#ffad00',
+    borderRadius: 23,
+    backgroundColor: '#181818',
     padding: 10,
+    fontSize: 13,
+    height: 43,
+    color: 'white'
   },
   createPostTitle: {
     marginTop: 8,
@@ -395,7 +408,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     color: 'white',
     borderWidth: 1,
-    borderColor: '#fff',
+    borderColor: '#ffad00',
     borderRadius: 20,
     padding: 10,
   },
@@ -404,26 +417,27 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     flexDirection: 'row',
     color: 'white',
-    borderWidth: 1,
-    backgroundColor: '#121212',
-    borderColor: '#fff',
-    borderRadius: 8,
+    borderWidth: 0.7,
+    backgroundColor: '#181818',
+    borderColor: '#ffad00',
+    borderRadius: 35,
     padding: 10,
-    minHeight: 80,
+    minHeight: 70,
+    fontSize: 13
   },
   uploadFile: {
     flex: 1,
     flexDirection: 'row',
   },
   uploadFileBtn: {
-    backgroundColor: '#121212',
+    backgroundColor: '#181818',
     flex: 1,
-    margin: 8,
+    margin: 6,
     flexDirection: 'row',
     color: 'white',
-    borderWidth: 1,
-    borderColor: '#fff',
-    borderRadius: 8,
+    borderWidth: 0.7,
+    borderColor: '#ffad00',
+    borderRadius: 23,
     height: 45,
     justifyContent: 'center',
     alignItems: 'center',
@@ -439,9 +453,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   removeBtn: {
-    backgroundColor: '#F6B718',
+    
+    backgroundColor: '#2A2B2E',
     borderRadius: 20,
-    flex: 1,
+    width: '47%',
     height: 40,
     marginTop: 10,
     marginRight: 10,
@@ -449,8 +464,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   confirmBtn: {
-    flex: 1,
-    backgroundColor: '#4154fb',
+    width: '47%',
+    // backgroundColor: '#0B3E92',
     borderRadius: 20,
     marginTop: 10,
     marginLeft: 10,

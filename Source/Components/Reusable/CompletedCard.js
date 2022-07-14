@@ -15,7 +15,7 @@ import DatePicker from 'react-native-date-picker';
 import {TextInput} from 'react-native-gesture-handler';
 import VideoPlayer from 'react-native-video-player';
 import imagePath from '../../Constants/imagePath';
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 // create a component
 const CompletedCard = ({route}) => {
   const [date, setDate] = useState(new Date());
@@ -36,7 +36,10 @@ const CompletedCard = ({route}) => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.containerQA}>
-        <View style={{position: 'relative', margin: 8, borderRadius: 10}}>
+
+
+      <View style={{backgroundColor:'#282828',borderRadius:15,padding:10}}>
+      <View style={{position: 'relative', margin: 8, borderRadius: 10}}>
           <VideoPlayer
             video={{
               uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
@@ -50,12 +53,12 @@ const CompletedCard = ({route}) => {
         </View>
         <View style={{margin: 8}}>
           <Text style={styles.textInputHeader}>This is {typeName}</Text>
-          <Text style={{color: '#fff', marginHorizontal: 8}}>
+          <Text style={{color: '#ffaa00',fontSize:12, marginHorizontal: 8}}>
             5:32 PM 2nd July
           </Text>
         </View>
 
-        <View style={styles.underLineBlack}></View>
+      
         <View style={{margin: 5}}>
           <Text style={styles.textInput}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -64,9 +67,10 @@ const CompletedCard = ({route}) => {
             scrambled it to make a type specimen book.
           </Text>
         </View>
-        <View style={styles.underLineBlack}></View>
+      </View>
+      
 
-        <View style={{margin: 8}}>
+        <View style={{backgroundColor:'#282828',borderRadius:10,marginVertical:10,padding:10}}>
           <View>
             <Text style={styles.textInputHeader}>Instruction</Text>
           </View>
@@ -80,7 +84,7 @@ const CompletedCard = ({route}) => {
           </View>
         </View>
 
-        <View style={{marginHorizontal: 8}}>
+        <View style={{backgroundColor:'#282828',borderRadius:10,marginBottom:10,padding:10}}>
           <View style={{flexDirection: 'row', margin: 8}}>
             <View style={{flex: 1, justifyContent: 'center'}}>
               <Text style={{color: '#ddd'}}>Event Date</Text>
@@ -88,7 +92,7 @@ const CompletedCard = ({route}) => {
 
             <View style={styles.createMeetupRow}>
               <View style={{paddingHorizontal: 8}}>
-                <Image source={imagePath.one} />
+              <Icon name="date-range" size={20} color="#ffaa00" />
               </View>
               <Text style={{color: '#fff'}}>26-05-2022</Text>
             </View>
@@ -100,7 +104,7 @@ const CompletedCard = ({route}) => {
             </View>
             <View style={styles.createMeetupRow}>
               <View style={{paddingHorizontal: 8}}>
-                <Image source={imagePath.two} />
+              <Icon name="access-time" size={20} color="#ffaa00" />
               </View>
               <Text style={{color: '#fff'}}>8.00 PM</Text>
             </View>
@@ -111,36 +115,31 @@ const CompletedCard = ({route}) => {
             </View>
             <View style={styles.createMeetupRow}>
               <View style={{paddingHorizontal: 8}}>
-                <Image source={imagePath.two} />
+              <Icon name="av-timer" size={20} color="#ffaa00" />
               </View>
               <Text style={{color: '#fff'}}>9.00 PM</Text>
             </View>
           </View>
 
+       
           <View style={{flexDirection: 'row', margin: 8}}>
             <View style={{flex: 1, justifyContent: 'center'}}>
-              <Text style={{color: '#ddd'}}>Registration Date</Text>
-            </View>
-            <View style={{flex: 1, flexDirection: 'row'}}>
-              <View style={styles.createMeetupRow}>
-                <View>
-                  <Image source={imagePath.one} />
-                </View>
-                <Text
-                  style={{color: '#fff', fontSize: 12, marginHorizontal: 2}}>
-                  26-05-2022 To 27-05-200
-                </Text>
-              </View>
-            </View>
-          </View>
-
-          <View style={{flexDirection: 'row', margin: 8}}>
-            <View style={{flex: 1, justifyContent: 'center'}}>
-              <Text style={{color: '#ddd'}}>Participant</Text>
+              <Text style={{color: '#ddd'}}>Registration</Text>
             </View>
             <View style={styles.createMeetupRow}>
               <View style={{paddingHorizontal: 8}}>
-                <Image source={imagePath.five} />
+              <Icon name="app-registration" size={20} color="#ffaa00" />
+              </View>
+              <Text style={{color: '#fff'}}>10-2-22 to 12-4-22</Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', margin: 8}}>
+            <View style={{flex: 1, justifyContent: 'center'}}>
+              <Text style={{color: '#ddd'}}>Participants</Text>
+            </View>
+            <View style={styles.createMeetupRow}>
+              <View style={{paddingHorizontal: 8}}>
+              <Icon name="groups" size={20} color="#ffaa00" />
               </View>
               <Text style={{color: '#fff'}}>10</Text>
             </View>
@@ -151,7 +150,7 @@ const CompletedCard = ({route}) => {
             </View>
             <View style={styles.createMeetupRow}>
               <View style={{paddingHorizontal: 8}}>
-                <Image source={imagePath.six} />
+              <Icon name="attach-money" size={20} color="#ffaa00" />
               </View>
               <Text style={{color: '#fff'}}>5000 Tk</Text>
               {/* <TextInput
@@ -230,7 +229,7 @@ const styles = StyleSheet.create({
   },
   MainCard: {
     padding: 5,
-    backgroundColor: '#343434',
+    // backgroundColor: '#343434',
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
     flexDirection: 'row',
@@ -257,7 +256,7 @@ const styles = StyleSheet.create({
     color: '#AEAEAE',
   },
   containerQA: {
-    backgroundColor: '#343434',
+  
     margin: 8,
     borderRadius: 10,
     flex: 1,
