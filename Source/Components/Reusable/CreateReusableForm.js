@@ -114,7 +114,7 @@ const CreateReusableForm = () => {
             </View> */}
             <TextInput
               style={styles.createMeetupRow}
-              placeholder="Session Title"
+              placeholder="Session Tittle"
               placeholderTextColor="#9e9e9e"
 
             />
@@ -141,11 +141,11 @@ const CreateReusableForm = () => {
               style={styles.uploadFileBtn}
               onPress={openDocumentFile}>
               {/* <Entypo name="video-camera" color={'#fff'} size={22} /> */}
-              <FontAwesome5 name="file-export" color={'#9e9e9e'} size={15} />
+              <FontAwesome5 name="file-export" color={'#ffaa00'} size={15} />
               <Text style={{ color: '#9e9e9e', paddingLeft: 8, fontSize: 13 }}>Upload File</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.uploadFileBtn} onPress={openPicker}>
-              <Entypo name="video-camera" color={'#9e9e9e'} size={15} />
+              <Entypo name="video-camera"  color={'#ffaa00'} size={15} />
               <Text style={{ color: '#9e9e9e', paddingLeft: 8, fontSize: 13 }}>Upload Image</Text>
             </TouchableOpacity>
           </View>
@@ -162,7 +162,7 @@ const CreateReusableForm = () => {
                 26-05-2022
               </Text>
               <View>
-                <MaterialIcons name="date-range" color={'#9e9e9e'} size={15} />
+                <MaterialIcons name="date-range"  color={'#ffaa00'} size={15} />
               </View>
             </TouchableOpacity>
           </View>
@@ -187,7 +187,7 @@ const CreateReusableForm = () => {
                 style={styles.uploadFileBtn}
                 onPress={showTimePicker}>
                 <Text style={{ color: '#9e9e9e', paddingRight: 8, fontSize: 13 }}>5.25PM</Text>
-                <AntDesign name="clockcircleo" color={'#9e9e9e'} size={15} />
+                <AntDesign name="clockcircleo"  color={'#ffaa00'} size={15} />
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1 }}>
@@ -196,7 +196,7 @@ const CreateReusableForm = () => {
                 style={styles.uploadFileBtn}
                 onPress={showTimePicker}>
                 <Text style={{ color: '#9e9e9e', paddingRight: 8, fontSize: 13 }}>8.25PM</Text>
-                <AntDesign name="clockcircleo" color={'#9e9e9e'} size={15} />
+                <AntDesign name="clockcircleo"  color={'#ffaa00'} size={15} />
               </TouchableOpacity>
             </View>
           </View>
@@ -298,9 +298,9 @@ const CreateReusableForm = () => {
               <Text style={{ fontSize: 13, color: 'white' }}>CLEAR</Text>
             </TouchableOpacity>
 
-            <LinearGradient colors={[ '#E19A04','#E7A725','#FFAD00','#FACF75',]} style={styles.confirmBtn}>
+            <LinearGradient colors={[ '#E19A04','#E7A725','#FFAD55','#FACF55',]} style={styles.confirmBtn}>
               <TouchableOpacity >
-                <Text style={{ fontSize: 13, color: 'white',fontWeight:'bold' }}>
+                <Text style={{ fontSize: 13, color: 'white', }}>
                   CONFIRM
                 </Text>
               </TouchableOpacity>
@@ -320,9 +320,10 @@ const styles = StyleSheet.create({
     color: '#9e9e9e',
     marginHorizontal: 8,
     fontSize: 13,
-    fontWeight: 'bold',
+
     marginBottom: 6,
-    textAlign: 'center'
+    textAlign: 'center',
+    color:'#ffaa00'
   },
   textInput: {
     borderWidth: 0.7,
@@ -398,7 +399,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#181818',
     padding: 10,
     fontSize: 13,
-    height: 45,
+    height: 43,
     color: 'white'
   },
   createPostTitle: {
